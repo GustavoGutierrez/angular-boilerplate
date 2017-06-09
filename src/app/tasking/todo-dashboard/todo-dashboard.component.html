@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+<p>
+  Last Update: {{ (lastUpdate | async) | date:'mediumTime' }}
+</p>
+<p>
+  Total items: {{ (todos | async).length }}
+</p>
+<p>
+  <button (click)="clearTodos()">Delete All</button>
+</p>
