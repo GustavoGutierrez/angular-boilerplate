@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgReduxModule } from 'ng2-redux';
+import { NgReduxModule } from '@angular-redux/store';
 
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.component';
-import { TodoService } from './todo-list/todo.service'; 
+import { TodoService } from './todo-list/todo.service';
 
 @NgModule({
   imports: [
