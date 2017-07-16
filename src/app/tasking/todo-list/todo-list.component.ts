@@ -13,6 +13,7 @@ import * as _ from "lodash";
 })
 export class TodoListComponent {
   @select(s => s.tasking.todos) todos;
+  @select(s => s.tasking.lastUpdate) lastUpdate;
   public todosCompleteds:number = 0;
   public todosInCompleteds:number = 0;
 

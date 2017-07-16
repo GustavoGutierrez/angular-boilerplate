@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { TodosRoutingModule } from './todos-routing.module';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.component';
 import { TodoService } from './todo-list/todo.service';
 
 @NgModule({
@@ -12,12 +11,10 @@ import { TodoService } from './todo-list/todo.service';
     TodosRoutingModule
   ],
   declarations: [
-    TodoListComponent,
-    TodoDashboardComponent
+    TodoListComponent
   ],
   exports: [
-    TodoListComponent,
-    TodoDashboardComponent
+    TodoListComponent
   ],
   providers: [TodoService],
 })

@@ -5,6 +5,7 @@ import { NgReduxModule } from '@angular-redux/store';
 import { LayoutComponent } from './layout/layout.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,10 @@ import { SharedModule } from '../shared/shared.module';
     NgReduxModule,
     SharedModule
   ],
-  declarations: [ LayoutComponent ],
+  declarations: [
+    LayoutComponent,
+    NavbarComponent
+],
   exports: [LayoutComponent]
 
 })

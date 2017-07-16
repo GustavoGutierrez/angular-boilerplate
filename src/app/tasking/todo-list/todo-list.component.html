@@ -4,8 +4,12 @@
   <div class="col-md-6">
     <div class="todolist not-done">
       <h1>Todos</h1>
+      <div class="input-group">
         <input type="text" #title class="form-control add-todo" placeholder="Add todo">
-        <button id="checkAll" (click)="addTodo(title)" class="btn btn-success">Add</button>
+         <span class="input-group-btn">
+        <button id="checkAll" (click)="addTodo(title)" class="btn btn-primary">Add</button>
+        </span>
+    </div>
         <hr>
         <ul id="sortable" class="list-unstyled">
         <ng-container *ngFor="let t of todos | async">
@@ -19,6 +23,7 @@
 
         <div class="todo-footer">
             <strong><span class="count-todos">{{ todosCompleteds }}</span></strong> Items
+            <p>Last Update: {{ (lastUpdate | async) | date:'mediumTime' }}</p>
         </div>
     </div>
   </div>
