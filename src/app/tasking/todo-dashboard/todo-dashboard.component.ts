@@ -5,6 +5,7 @@ import { CLEAR_TODOS } from '../actions';
 
 @Component({
   selector: 'app-todo-dashboard',
+  moduleId:module.id,
   templateUrl: './todo-dashboard.component.html',
   styleUrls: ['./todo-dashboard.component.css']
 })

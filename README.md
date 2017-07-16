@@ -24,6 +24,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Redux
+### Redux store (ngRedux)
+https://angular-redux.github.io/store/
 
 ### Redux Local Storage
 https://github.com/elgerlambert/redux-localstorage

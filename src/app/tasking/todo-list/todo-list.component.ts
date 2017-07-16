@@ -6,6 +6,7 @@ import { IAppState } from '../../store';
 
 @Component({
   selector: 'app-todo-list',
+  moduleId:module.id,
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })

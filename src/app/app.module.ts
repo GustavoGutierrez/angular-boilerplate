@@ -13,13 +13,13 @@ const logger = createLogger({
   // ...options
 });
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TodosModule } from './tasking/todos.module'
+import { LayoutComponent } from "./core/layout/layout.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -30,13 +30,16 @@ import { TodosModule } from './tasking/todos.module'
     TodosModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [LayoutComponent]
+
 })
 export class AppModule {
   constructor(ngRedux: NgRedux<IAppState>, devTools: DevToolsExtension) {
 
-    let enhancers: Array<any> = isDevMode() ? [devTools.enhancer(), persistState()] : [persistState()];
-    let middleware: Array<any> = [logger];
+    let enhancers: Array<any> = isDevMode() ? [devTools.enhancer()] : [];
+    enhancers.push(persistState());
+
+    let middleware: Array<any> = isDevMode() ? [logger] : [];
 
     ngRedux.configureStore(rootReducer, INITIAL_STATE, middleware, enhancers);
   }
