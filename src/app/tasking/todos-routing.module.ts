@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginFormComponent } from './loginForm/loginForm.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: LoginFormComponent
+    component: TodoListComponent
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations:[]
 })
-export class LoginRoutingModule { }
+export class TodosRoutingModule { }

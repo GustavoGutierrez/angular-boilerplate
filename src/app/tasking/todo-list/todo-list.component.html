@@ -1,23 +1,40 @@
 
 <div class="row">
-  <div class="col-lg-12">
-    <h1>Todo List</h1>
-    <div class="input-group">
-      <input type="text" #title class="form-control" placeholder="Todo...">
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" (click)="addTodo(title)" type="button">Add</button>
-      </span>
+
+  <div class="col-md-6">
+    <div class="todolist not-done">
+      <h1>Todos</h1>
+        <input type="text" #title class="form-control add-todo" placeholder="Add todo">
+        <button id="checkAll" (click)="addTodo(title)" class="btn btn-success">Add</button>
+        <hr>
+        <ul id="sortable" class="list-unstyled">
+        <ng-container *ngFor="let t of todos | async">
+            <li class="ui-state-default" *ngIf="!t.isCompleted">
+                <div class="checkbox">
+                    <label (click)="toggleTodo(t)"><input type="checkbox" value="" [checked]="t.isCompleted" />{{ t.title }}</label>
+                </div>
+            </li>
+            </ng-container>
+        </ul>
+
+        <div class="todo-footer">
+            <strong><span class="count-todos">{{ todosCompleteds }}</span></strong> Items
+        </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-lg-12">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let t of todos | async">
-        <span (click)="toggleTodo(t)" [class.completed]="t.isCompleted">{{ t.title }}</span>
-        <button type="button" (click)="removeTodo(t)" class="btn btn-sm btn-danger">Remove</button>
-      </li>
-    </ul>
+  <div class="col-md-6">
+      <div class="todolist">
+        <h1>Already Done</h1>
+        <ul id="done-items" class="list-unstyled">
+          <ng-container *ngFor="let t of todos | async">
+              <li *ngIf="t.isCompleted" [class.completed]="t.isCompleted">{{ t.title }} <button (click)="removeTodo(t)" class="remove-item btn btn-default btn-sm pull-right"><span class="fa fa-close"></span></button></li>
+          </ng-container>
+        </ul>
+
+        <div class="todo-footer">
+            <strong><span class="count-todos">{{ todosInCompleteds }}</span></strong> Items
+        </div>
+      </div>
   </div>
 </div>

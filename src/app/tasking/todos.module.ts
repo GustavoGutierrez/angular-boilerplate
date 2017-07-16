@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgReduxModule } from '@angular-redux/store';
 
+import { TodosRoutingModule } from './todos-routing.module';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.component';
 import { TodoService } from './todo-list/todo.service';
@@ -9,7 +9,7 @@ import { TodoService } from './todo-list/todo.service';
 @NgModule({
   imports: [
     CommonModule,
-    NgReduxModule
+    TodosRoutingModule
   ],
   declarations: [
     TodoListComponent,

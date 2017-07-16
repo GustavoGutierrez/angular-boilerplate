@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthenticatedGuard } from './authenticated.guard';
-import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from '../shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -12,27 +12,33 @@ const routes: Routes = [
   },
 
   {
-    path: '',
+    path: 'login',
     loadChildren: 'app/login/login.module#LoginModule'
   },
 
   {
     path: 'admin',
-    //canActivate: [AuthenticatedGuard],
+    canActivate: [AuthenticatedGuard],
     loadChildren: 'app/admin/admin.module#AdminModule'
   },
 
-  /*{
+  {
+    path: 'tasking',
+    canActivate: [AuthenticatedGuard],
+    loadChildren: 'app/tasking/todos.module#TodosModule'
+  },
+
+  {
     path: '**',
     component: PageNotFoundComponent
-  },*/
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers:[
+  providers: [
     AuthenticatedGuard
   ]
 })
-export class AppRoutingModule { }
+export class CoreRoutingModule { }

@@ -3,8 +3,8 @@ import { NgModule } from "@angular/core";
 import { AdminComponent } from "./components/admin.component";
 
 const routes: Routes = [
-  {  
-    path:'home',
+  {
+    path:'',
     component:AdminComponent
   },
 ];

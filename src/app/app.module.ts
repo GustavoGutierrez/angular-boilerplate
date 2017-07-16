@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 import persistState from 'redux-localstorage';
@@ -13,23 +11,18 @@ const logger = createLogger({
   // ...options
 });
 
-import { AppRoutingModule } from './app-routing.module';
-import { TodosModule } from './tasking/todos.module'
-import { LayoutComponent } from "./core/layout/layout.component";
+import { TodosModule } from './tasking/todos.module';
+import { CoreModule } from './core/core.module';
+import { LayoutComponent } from './core/layout/layout.component';
+
 
 @NgModule({
-  declarations: [
-    LayoutComponent
-  ],
+  declarations: [],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule,
     NgReduxModule,
-    TodosModule
+    CoreModule
   ],
-  providers: [],
   bootstrap: [LayoutComponent]
 
 })
