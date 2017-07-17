@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MetaModule } from '@ngx-meta/core';
 
 import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 import { fromJS, Map } from 'immutable';
@@ -22,7 +23,8 @@ import { LayoutComponent } from './core/layout/layout.component';
   imports: [
     BrowserModule,
     NgReduxModule,
-    CoreModule
+    CoreModule,
+     MetaModule.forRoot()
   ],
   bootstrap: [LayoutComponent]
 

@@ -4,13 +4,19 @@ import { LoginFormComponent } from './loginForm/loginForm.component';
 const routes: Routes = [
   {
     path: '',
-    component: LoginFormComponent
+    component: LoginFormComponent,
+    data: {
+      meta: {
+        title: 'Login',
+        description: 'Inicia sesión para acceder'
+      }
+    }
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  declarations:[]
+  declarations: []
 })
 export class LoginRoutingModule { }

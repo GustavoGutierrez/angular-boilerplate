@@ -4,8 +4,14 @@ import { AdminComponent } from "./components/admin.component";
 
 const routes: Routes = [
   {
-    path:'',
-    component:AdminComponent
+    path: '',
+    component: AdminComponent,
+    data: {
+      meta: {
+        title: 'Dashboard',
+        description: 'Home - Dashboard'
+      }
+    }
   },
 ];
 
@@ -13,7 +19,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  declarations:[AdminComponent]
+  declarations: [AdminComponent]
 })
 export class AdminRoutingModule { }
 
