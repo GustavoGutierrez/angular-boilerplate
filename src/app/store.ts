@@ -1,4 +1,3 @@
-import { tassign } from 'tassign';
 import { combineReducers } from 'redux';
 import { ITaskingState, TASKING_INITIAL_STATE, taskingReducer } from './tasking/store';
 

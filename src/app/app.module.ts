@@ -3,6 +3,7 @@ import { NgModule, isDevMode } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
+import { fromJS, Map } from 'immutable';
 import persistState from 'redux-localstorage';
 import { createLogger } from 'redux-logger';
 import { IAppState, rootReducer, INITIAL_STATE } from './store';
@@ -27,13 +28,13 @@ import { LayoutComponent } from './core/layout/layout.component';
 
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<IAppState>, devTools: DevToolsExtension) {
+  constructor(ngRedux: NgRedux<Map<string, any>>, devTools: DevToolsExtension) {
 
     let enhancers: Array<any> = isDevMode() ? [devTools.enhancer()] : [];
     enhancers.push(persistState());
 
     let middleware: Array<any> = isDevMode() ? [logger] : [];
 
-    ngRedux.configureStore(rootReducer, INITIAL_STATE, middleware, enhancers);
+    ngRedux.configureStore(rootReducer, fromJS(INITIAL_STATE), middleware, enhancers);
   }
 }
