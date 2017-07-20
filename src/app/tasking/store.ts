@@ -12,51 +12,62 @@ export const TASKING_INITIAL_STATE: ITaskingState = {
   lastUpdate: null,
 }
 
-function addTodo(state, action) {
-  var newTodo = { id: state.todos.length + 1, title: action.title };
 
-  return tassign(state, {
-    todos: state.todos.concat(newTodo),
-    lastUpdate: new Date()
-  });
-}
+class TodoActions {
 
-function toggleTodo(state, action) {
-  var todo = state.todos.find(t => t.id === action.id);
+  constructor(private state, private action) {
+    console.log(this.action);
+  }
 
-  // Now, we need to find the position of this item in the array.
-  var index = state.todos.indexOf(todo);
+  addTodo() {
+    var payload:any = this.action.title;
+    console.log('this.action.title', this.action.title)
+    var newTodo = { id: this.state.todos.length + 1, title: payload };
 
-  return tassign(state, {
-    todos: [
-      ...state.todos.slice(0, index),
-      tassign(todo, { isCompleted: !todo.isCompleted }),
-      ...state.todos.slice(index + 1),
-    ],
-    lastUpdate: new Date()
-  });
-}
+    return tassign(this.state, {
+      todos: this.state.todos.concat(newTodo),
+      lastUpdate: new Date()
+    });
+  }
 
-function removeTodo(state, action) {
-  return tassign(state, {
-    todos: state.todos.filter(t => t.id !== action.id),
-    lastUpdate: new Date()
-  });
-}
+  toggleTodo() {
+    var todo = this.state.todos.find(t => t.id === this.action.id);
+    var index = this.state.todos.indexOf(todo);
+    return tassign(this.state, {
+      todos: [
+        ...this.state.todos.slice(0, index),
+        tassign(todo, { isCompleted: !todo.isCompleted }),
+        ...this.state.todos.slice(index + 1),
+      ],
+      lastUpdate: new Date()
+    });
+  }
 
-function clearTodos(state, action) {
-  return tassign(state, {
-    todos: [],
-    lastUpdate: new Date()
-  });
+  removeTodo() {
+    return tassign(this.state, {
+      todos: this.state.todos.filter(t => t.id !== this.action.id),
+      lastUpdate: new Date()
+    });
+  }
+
+  clearTodos() {
+    return tassign(this.state, {
+      todos: [],
+      lastUpdate: new Date()
+    });
+  }
+
 }
 
 export function taskingReducer(state: ITaskingState = TASKING_INITIAL_STATE, action): ITaskingState {
+
+  var todoActions: TodoActions = new TodoActions(state, action);
+
   switch (action.type) {
-    case ADD_TODO: return addTodo(state, action);
-    case TOGGLE_TODO: return toggleTodo(state, action);
-    case REMOVE_TODO: return removeTodo(state, action);
-    case CLEAR_TODOS: return clearTodos(state, action);
+    case ADD_TODO: return todoActions.addTodo();
+    case TOGGLE_TODO: return todoActions.toggleTodo();
+    case REMOVE_TODO: return todoActions.removeTodo();
+    case CLEAR_TODOS: return todoActions.clearTodos();
   }
 
   return state;

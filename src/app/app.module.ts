@@ -24,7 +24,7 @@ import { LayoutComponent } from './core/layout/layout.component';
     BrowserModule,
     NgReduxModule,
     CoreModule,
-     MetaModule.forRoot()
+    MetaModule.forRoot()
   ],
   bootstrap: [LayoutComponent]
 
