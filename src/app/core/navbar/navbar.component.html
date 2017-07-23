@@ -2,15 +2,15 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#primarynavbar" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" [routerLink]="['/']">NgBoilerplate</a>
+  <a class="navbar-brand" [routerLink]="['/admin']">NgBoilerplate</a>
 
   <div class="collapse navbar-collapse" id="primarynavbar">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" [routerLink]="['admin']">Dashboard</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/tasking']">Tasking</a>
+        <a class="nav-link" [routerLink]="['admin/tasking']">Tasking</a>
       </li>
     </ul>
   </div>

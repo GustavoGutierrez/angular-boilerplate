@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoComponent } from './todo/todo.component';
 const routes: Routes = [
   {
     path: '',
-    component: TodoListComponent,
+    component: TodoComponent,
     data: {
       meta: {
         title: 'Lista de tareas',
@@ -19,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class TodosRoutingModule { }
+export class TaskingRoutingModule { }

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ITaskingState, TASKING_INITIAL_STATE, taskingReducer } from './tasking/store';
+import { ITaskingState, TASKING_INITIAL_STATE, taskingReducer } from './admin/tasking/store';
 
 export interface IAppState {
   tasking: ITaskingState;

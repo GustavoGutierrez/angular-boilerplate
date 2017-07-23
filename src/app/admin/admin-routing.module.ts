@@ -1,11 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from "@angular/core";
-import { AdminComponent } from "./components/admin.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { MetaGuard } from '@ngx-meta/core';
 
 const routes: Routes = [
   {
     path: '',
-    component: AdminComponent,
+    component: DashboardComponent,
     data: {
       meta: {
         title: 'Dashboard',
@@ -13,13 +14,19 @@ const routes: Routes = [
       }
     }
   },
+
+  {
+    path: 'tasking',
+    canActivateChild: [MetaGuard],
+    loadChildren: 'app/admin/tasking/tasking.module#TaskingModule'
+  }
 ];
 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  declarations: [AdminComponent]
+  declarations: []
 })
 export class AdminRoutingModule { }
 

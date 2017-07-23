@@ -8,14 +8,14 @@ import { PageNotFoundComponent } from '../shared/components/page-not-found/page-
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/',
     pathMatch: 'full'
   },
 
   {
-    path: 'login',
+    path: '',
     canActivateChild: [MetaGuard],
-    loadChildren: 'app/login/login.module#LoginModule'
+    loadChildren: 'app/public/login/login.module#LoginModule'
   },
 
   {
@@ -23,13 +23,6 @@ const routes: Routes = [
     canActivate: [AuthenticatedGuard],
     canActivateChild: [MetaGuard],
     loadChildren: 'app/admin/admin.module#AdminModule'
-  },
-
-  {
-    path: 'tasking',
-    canActivate: [AuthenticatedGuard],
-    canActivateChild: [MetaGuard],
-    loadChildren: 'app/tasking/todos.module#TodosModule'
   },
 
   {

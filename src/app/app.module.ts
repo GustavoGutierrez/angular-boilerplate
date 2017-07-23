@@ -12,7 +12,6 @@ const logger = createLogger({
   // ...options
 });
 
-import { TodosModule } from './tasking/todos.module';
 import { CoreModule } from './core/core.module';
 import { LayoutComponent } from './core/layout/layout.component';
 

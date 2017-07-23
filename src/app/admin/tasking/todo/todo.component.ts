@@ -2,28 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 
 import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions';
-import { IAppState } from '../../store';
-import * as _ from "lodash";
+import { fromJS, Map } from 'immutable';
+import * as R from 'ramda';
 
 @Component({
-  selector: 'app-todo-list',
+  selector: 'app-todo',
   moduleId: module.id,
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.css']
 })
-export class TodoListComponent {
+export class TodoComponent {
   @select(s => s.tasking.todos) todos;
   @select(s => s.tasking.lastUpdate) lastUpdate;
   public todosCompleteds: number = 0;
   public todosInCompleteds: number = 0;
 
-  constructor(private ngRedux: NgRedux<IAppState>) {
+  constructor(private ngRedux: NgRedux<Map<string, any>>) {
 
     this.todos.subscribe(todos => {
       this.todosCompleteds = 0;
       this.todosInCompleteds = 0;
+      const hasComplete = R.has('isCompleted');
+
       todos.forEach(todo => {
-        if (!todo.isCompleted || !_.has(todo, 'isCompleted')) {
+        if (!todo.isCompleted || !hasComplete(todo)) {
           this.todosCompleteds++;
         } else {
           this.todosInCompleteds++;
