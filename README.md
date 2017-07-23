@@ -1,7 +1,7 @@
 # ANGULAR BOILERPLATE
 Proyecto base para iniciar cualquier proyecto con Angular 4 usando Redux para manejar el estado y flujo de los datos dentro de la aplicación se intenta mantener un estandar y mejores practicas; haciendo uso no solo de inmutables, con librerias tales como Ramda JS, Immutable JS, tassign, etc.
 
-Este proyecto ofrese una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo, escalable y predecible no solo en la parse de Javascript sino en CSS implementando una arquitectura escalable y mantenible de su css con el uso de ITCSS [http://itcss.io](http://itcss.io/). Dandole con esto el punto de partida para para su estructura css.
+Este proyecto ofrese una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo, escalable y predecible no solo en la parse de Javascript sino en CSS implementando una arquitectura escalable y mantenible de su css con el uso de la arquitectura ITCSS [http://itcss.io](http://itcss.io/). Dandole con esto el punto de partida para para su estructura css.
 
 ## ESTRUCTURA DE LA APLICACIÓN
 
@@ -29,7 +29,7 @@ Este proyecto ofrese una estructura base organizada e intuitiva para el inicio d
 
 
 A continuación puede ver los componentes, modulos y librerias usados ademas de una serie de componentes y modulos utiles que pueda necesitar instalar en su proyecto tales como notificaciones, datagrids, pipes, etc.
- 
+
 # COMPONENTS
 
 ## Awesome Angular Components
