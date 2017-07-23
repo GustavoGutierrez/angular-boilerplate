@@ -1,4 +1,28 @@
-# Angular Boilerplate - In Progress Beta
+# ANGULAR BOILERPLATE
+
+## ESTRUCTURA DE LA APLICACIÓN
+
+- src
+  * app
+    - core
+      * guard
+      * layout
+      * navbar
+      * core-routing.module.ts
+      * core.module.ts
+    - shared
+      * components
+      * directives
+      * pipes
+      * app.config.ts
+      * shared.module.ts
+    - public
+      * login
+    - admin
+      * dashboard
+      * tasking -> sample module please delete 
+      * admin-routing.module.ts
+      * admin.module.ts
 
 # COMPONENTS
 
@@ -74,7 +98,7 @@ Error catcher middleware for Redux reducers and sync middlewares.
 https://github.com/PlatziDev/redux-catch
 
 
-# ACTIONS
+# ESTANDAR DE IMPLEMENTACIÓN DE ACTIONS
 
 An action MUST
 
