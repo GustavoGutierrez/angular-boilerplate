@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MetaGuard } from '@ngx-meta/core';
 
-import { AuthenticatedGuard } from './authenticated.guard';
+import { AuthGuard } from './guard/auth.guard';
 import { PageNotFoundComponent } from '../shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
 
   {
     path: 'admin',
-    canActivate: [AuthenticatedGuard],
+    canActivate: [AuthGuard],
     canActivateChild: [MetaGuard],
     loadChildren: 'app/admin/admin.module#AdminModule'
   },
@@ -35,7 +35,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [
-    AuthenticatedGuard
+    AuthGuard
   ]
 })
 export class CoreRoutingModule { }

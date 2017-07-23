@@ -9,7 +9,7 @@ import * as R from 'ramda';
   selector: 'app-todo',
   moduleId: module.id,
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent {
   @select(s => s.tasking.todos) todos;

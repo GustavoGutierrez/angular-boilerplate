@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { NgReduxModule } from '@angular-redux/store';
 import { MetaModule } from '@ngx-meta/core';
 
@@ -11,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     MetaModule.forRoot(),
     NgReduxModule,
     SharedModule,
