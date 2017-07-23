@@ -1,7 +1,9 @@
 # ANGULAR BOILERPLATE
-Proyecto base para iniciar cualquier proyecto con Angular 4 usando Redux para manejar el estado y flujo de los datos dentro de la aplicación se intenta mantener un estandar y mejores practicas; haciendo uso no solo de inmutables, con librerias tales como Ramda JS, Immutable JS, tassign, etc.
 
-Este proyecto ofrese una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo, escalable y predecible no solo en la parse de Javascript sino en CSS implementando una arquitectura escalable y mantenible de su css con el uso de la arquitectura ITCSS [http://itcss.io](http://itcss.io/). Dandole con esto el punto de partida para para su estructura css.
+Proyecto base para iniciar cualquier proyecto con Angular >= 4.3 usando Redux para manejar el estado y flujo de los datos dentro de su aplicación se intenta mantener un estándar y mejores prácticas haciendo uso de immutables, programación funcional; con librerías como: ramda js, lodash/fs immutable JS, tassign, etc.
+
+Este proyecto ofrece una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo. proponiendo el uso de la immutabilidad con la programación funcional para hacer a nuestros proyectos fácilmente escalables y predecible tanto en Javascript como en CSS; En css se implementa una arquitectura escalable y mantenible con el uso de de ITCSS [http://itcss.io](http://itcss.io/). 
+
 
 ## ESTRUCTURA DE LA APLICACIÓN
 
@@ -89,6 +91,15 @@ https://angular-redux.github.io/store/
 
 ### Redux Local Storage
 https://github.com/elgerlambert/redux-localstorage
+```js
+ yarn add redux-localstorage
+```
+
+### Redux Session Storage
+https://github.com/ilyagelman/redux-sessionstorage
+```js
+ yarn add redux-sessionstorage
+```
 
 ### Redux Logger
 https://github.com/evgenyrodionov/redux-logger
@@ -140,3 +151,16 @@ If `error` has any other value besides `true`, including `undefined` and `null`,
 ### `meta`
 
 The optional `meta` property MAY be any type of value. It is intended for any extra information that is not part of the payload.
+
+
+# INFORMACIÓN ADICIONAL
+
+- Immutable data structures for functional JS | JSConf EU 2017
+  * https://www.youtube.com/watch?v=Wo0qiGPSV-s
+
+
+- Learning Functional Programming with JavaScript - JSUnconf 2016
+  * https://www.youtube.com/watch?v=e-5obm1G_FY
+
+- ¿Por qué utilizar Immutable.js?
+  * https://www.youtube.com/watch?v=ROTHW9Zk-TE
