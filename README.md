@@ -1,8 +1,46 @@
 # Angular Boilerplate - In Progress Beta
 
-## Redux
+# COMPONENTS
 
-### Flux standard actions
+## Awesome Angular Components
+https://github.com/brillout/awesome-angular-components
+
+## Web Notifications
+https://github.com/alexcastillo/ng2-notifications
+
+## Ng2 Easy TaBLE
+http://angular2-table.espeo.pl
+
+## Ngx Fullpage
+https://github.com/meiblorn/ngx-fullpage
+
+## Angular2 Schema Form
+Angular2 Schema Form is an Angular2 module allowing you to instanciate an HTML form from a JSON schema.
+https://github.com/makinacorpus/angular2-schema-form
+
+
+# DIRECTIVES
+
+## Ng2 Fontawesome
+https://github.com/seiyria/ng2-fontawesome
+
+
+# PIPES
+angular-pipes is a pipes library for Angular.
+https://fknop.gitbooks.io/angular-pipes/
+
+
+# LIBRARIES
+
+## Ramda
+Ramda has a more focused goal. We wanted a library designed specifically for a functional programming style, one that makes it easy to create functional pipelines, one that never mutates user data.
+http://ramdajs.com
+
+
+# REDUX
+https://github.com/xgrommx/awesome-redux
+
+## Flux standard actions
 https://github.com/acdlite/flux-standard-action
 
 ```
@@ -31,29 +69,12 @@ redux-saga is a library that aims to make side effects (i.e. asynchronous things
 https://redux-saga.js.org/
 
 
-
-## Libraries
-### Ramda
-Ramda has a more focused goal. We wanted a library designed specifically for a functional programming style, one that makes it easy to create functional pipelines, one that never mutates user data.
-
-http://ramdajs.com
+### Redux Catch
+Error catcher middleware for Redux reducers and sync middlewares.
+https://github.com/PlatziDev/redux-catch
 
 
-## Awesome Angular Components
-https://github.com/brillout/awesome-angular-components
-
-### Pipes
-angular-pipes is a pipes library for Angular.
-https://fknop.gitbooks.io/angular-pipes/
-
-
-### Angular2 Schema Form
-Angular2 Schema Form is an Angular2 module allowing you to instanciate an HTML form from a JSON schema.
-https://github.com/makinacorpus/angular2-schema-form
-
-https://github.com/hasanhameed07/angular2-dashboard-starter
-
-## Actions
+# ACTIONS
 
 An action MUST
 
