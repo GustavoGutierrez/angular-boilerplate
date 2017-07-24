@@ -12,7 +12,6 @@ export const TASKING_INITIAL_STATE: ITaskingState = {
   lastUpdate: null,
 }
 
-
 class TodoActions {
 
   constructor(private state, private action) {
