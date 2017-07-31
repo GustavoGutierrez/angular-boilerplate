@@ -2,8 +2,7 @@
 
 Proyecto base para iniciar cualquier proyecto con Angular >= 4.3 usando Redux para manejar el estado y flujo de los datos dentro de su aplicación se intenta mantener un estándar y mejores prácticas haciendo uso de immutables, programación funcional; con librerías como: ramda js, lodash/fs immutable JS, tassign, etc.
 
-Este proyecto ofrece una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo. proponiendo el uso de la immutabilidad con la programación funcional para hacer a nuestros proyectos fácilmente escalables y predecible tanto en Javascript como en CSS; En css se implementa una arquitectura escalable y mantenible con el uso de de ITCSS [http://itcss.io](http://itcss.io/). 
-
+Este proyecto ofrece una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo. proponiendo el uso de la immutabilidad con la programación funcional para hacer a nuestros proyectos fácilmente escalables y predecible tanto en Javascript como en CSS; En css se implementa una arquitectura escalable y mantenible con el uso de de ITCSS [http://itcss.io](http://itcss.io/).
 
 ## ESTRUCTURA DE LA APLICACIÓN
 
@@ -29,6 +28,9 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
       * admin-routing.module.ts
       * admin.module.ts
 
+# RECOMENDACIONES
+Usar la guia de estilos de Angular: 
+https://angular.io/guide/styleguide
 
 A continuación puede ver los componentes, modulos y librerias usados ademas de una serie de componentes y modulos utiles que pueda necesitar instalar en su proyecto tales como notificaciones, datagrids, pipes, etc.
 
@@ -39,6 +41,11 @@ Note: This project is under heavy construction and is not intended for general p
 
 https://github.com/swimlane/ngx-ui
 
+
+## Ng2-admin
+Admin panel framework based on Angular, Bootstrap 4 and Angular CLI
+https://github.com/akveo/ng2-admin
+
 # MODULES
 
 ## ngx-filesaver
@@ -46,8 +53,6 @@ Simple file save with FileSaver.js
 ```
 yarn add ngx-filesaver
 ```
-
-
 ## doorgets-ng-truncate
 Angular 2+ (ngx) ng2 truncate module from Directive, Pipe and Service
 ```
@@ -179,6 +184,11 @@ https://github.com/makinacorpus/angular2-schema-form
 
 
 # DIRECTIVES
+
+## ng2-handsontable
+The Angular2 directive for Handsontable
+
+https://valor-software.com/ng2-handsontable
 
 ## ngx-autogrow
 Angular directive for automatically height-adjusted textareas that also works within scrolling containers. Based on autogrow.js by Damian Senn.
