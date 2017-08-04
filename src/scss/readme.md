@@ -36,5 +36,6 @@ The triangle also shows how styles represented by selectors are ordered in the r
 
 ## Recursos
 
-- [ Gestionar grandes proyectos de CSS con ITCSS](http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528)
+- [Gestionar grandes proyectos de CSS con ITCSS](http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528)
 - [Manejo de proyectos web a gran escala con la nueva arquitectura CSS ITCSS](http://www.creativebloq.com/web-design/manage-large-scale-web-projects-new-css-architecture-itcss-41514731)
+- [Gestionar grandes proyectos CSS con ITCSS](http://www.waxnasbc.com/gestionar-grandes-proyectos-css-con-itcss/)

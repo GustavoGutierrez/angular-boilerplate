@@ -22,7 +22,7 @@
         "../node_modules/animate.css/animate.css",
         "../node_modules/bootstrap/scss/bootstrap.scss",
         "../node_modules/tether/src/css/tether.sass",
-        "styles.scss"
+        "scss/styles.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",

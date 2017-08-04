@@ -1,0 +1,32 @@
+
+/**
+ * ITCSS:
+ * Metodología para escribir código que es escalable y fácil de manipular.
+ **/
+
+// SETTINGS
+// Esto contiene cualquier configuración global para su proyecto.
+  @import "settings/_variables.scss";
+  @import '../../node_modules/font-awesome/scss/font-awesome';
+
+// TOOLS
+// Herramientas disponibles a nivel mundial, es decir, mezclas y funciones (mixins).
+
+// GENERIC
+// Contiene cosas como Normalize.css, reglas globales de tamaño de caja, restablecimientos CSS
+
+// ELEMENTS
+// Contiene css sin clase para elementos HTML
+
+// OBJECTS
+// Esta es la primera capa en la que encontramos selectores basados ​​en la clase.
+// Estos se ocupan de diseñar patrones de diseño no cosméticos, o "objetos" (OOCSS).
+
+// COMPONENTS
+// La capa de componentes es donde comenzamos a diseñar piezas reconocibles de interfaz de usuario.
+// No deberíamos encontrar selectores con una especificidad inferior a una clase en esta capa.
+  @import "components/_buttons.scss";
+
+// TRUMPS
+// Esta capa supera a todas las demás capas y tiene el poder de anular cualquier cosa que haya pasado antes.
+// Es inelegante y pesado, y contiene clases de utilidad y ayuda, hacks y anulaciones.

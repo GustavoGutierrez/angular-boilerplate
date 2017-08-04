@@ -6,7 +6,7 @@
     "url": "http://gustavogutierrez.co"
   },
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "(MIT or GPL-3.0)",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
