@@ -14,7 +14,7 @@ export const TASKING_INITIAL_STATE: ITaskingState = {
 
 class TodoActions {
 
-  constructor(private state, private action) {
+  constructor(private state:ITaskingState, private action) {
     console.log(this.action);
   }
 

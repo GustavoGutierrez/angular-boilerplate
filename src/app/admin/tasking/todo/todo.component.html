@@ -12,8 +12,8 @@
     </div>
         <hr>
         <ul id="sortable" class="list-unstyled">
-        <ng-container *ngFor="let t of todos | async">
-            <li class="ui-state-default" *ngIf="!t.isCompleted">
+        <ng-container *ngFor="let t of todos$ | async">
+            <li class="ui-state-default todo-item" *ngIf="!t.isCompleted">
                 <div class="checkbox">
                     <label (click)="toggleTodo(t)"><input type="checkbox" value="" [checked]="t.isCompleted" />{{ t.title }}</label>
                 </div>
@@ -23,7 +23,7 @@
 
         <div class="todo-footer">
             <strong><span class="count-todos">{{ todosCompleteds }}</span></strong> Items
-            <p>Last Update: {{ (lastUpdate | async) | date:'mediumTime' }}</p>
+            <p>Last Update: {{ (lastUpdate$ | async) | date:'mediumTime' }}</p>
         </div>
     </div>
   </div>
@@ -32,8 +32,8 @@
       <div class="todolist">
         <h1>Already Done</h1>
         <ul id="done-items" class="list-unstyled">
-          <ng-container *ngFor="let t of todos | async">
-              <li *ngIf="t.isCompleted" [class.completed]="t.isCompleted">{{ t.title }} <button (click)="removeTodo(t)" class="remove-item btn btn-default btn-sm pull-right"><span class="fa fa-close"></span></button></li>
+          <ng-container *ngFor="let t of todos$ | async">
+              <li *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">{{ t.title }} <button (click)="removeTodo(t)" class="remove-item btn btn-danger btn-sm pull-right"><span class="fa fa-close"></span></button></li>
           </ng-container>
         </ul>
 

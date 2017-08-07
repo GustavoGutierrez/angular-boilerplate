@@ -1,9 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
+import { Observable } from "rxjs/Observable";
+import { Map } from 'immutable';
 
 import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions';
-import { fromJS, Map } from 'immutable';
+import { IAppState } from '../../../store';
 import * as R from 'ramda';
+
+/**
+ * Required for Aot
+ * @param state
+ */
+export function todosSelector(state: IAppState): any {
+  return state.tasking.todos;
+}
+
+export function lastUpdateSelector(state: IAppState): any {
+  return state.tasking.lastUpdate;
+}
+
+interface ITodo {
+  id: number;
+  isCompleted?: boolean;
+  title: string;
+}
 
 @Component({
   selector: 'app-todo',
@@ -11,20 +31,24 @@ import * as R from 'ramda';
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })
-export class TodoComponent {
-  @select(s => s.tasking.todos) todos;
-  @select(s => s.tasking.lastUpdate) lastUpdate;
+export class TodoComponent implements OnInit {
+
   public todosCompleteds: number = 0;
   public todosInCompleteds: number = 0;
 
-  constructor(private ngRedux: NgRedux<Map<string, any>>) {
+  @select(todosSelector) todos$: Observable<any>;
+  @select(lastUpdateSelector) lastUpdate$: Observable<string>;
 
-    this.todos.subscribe(todos => {
+  constructor(private ngRedux: NgRedux<Map<string, any>>) { }
+
+  ngOnInit(): void {
+    this.todos$.subscribe((todos: Array<ITodo>) => {
+      console.log('oninit todos:', todos);
       this.todosCompleteds = 0;
       this.todosInCompleteds = 0;
       const hasComplete = R.has('isCompleted');
 
-      todos.forEach(todo => {
+      todos.forEach((todo: ITodo) => {
         if (!todo.isCompleted || !hasComplete(todo)) {
           this.todosCompleteds++;
         } else {
@@ -32,14 +56,12 @@ export class TodoComponent {
         }
       });
     });
-
   }
 
   addTodo(input) {
     if (!input.value) return;
 
     this.ngRedux.dispatch({ type: ADD_TODO, title: input.value });
-
     input.value = '';
   }
 

@@ -10,8 +10,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --environment=prod --aot=true  --sourcemaps=false",
-    "build:aot": "./node_modules/.bin/ngc -p tsconfig-aot.json",
+    "build": "./node_modules/@angular/cli/bin/ng build --prod --environment=prod --aot=true  --sourcemaps=false",
+    "build:aot": "./node_modules/@angular/cli/bin/ng build --verbose --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
