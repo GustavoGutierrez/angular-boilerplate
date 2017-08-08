@@ -1,0 +1,19 @@
+
+/* TEAM */
+        Desarrollador: Gustavo Gutierrez
+        Site: gustavogutierrez.co
+        Twitter: @GustavoWebDev
+        Location: Bogotá, Bogotá DC, Colombia.
+
+/* THANKS */
+
+# TECHNOLOGY COLOPHON
+  HTML5, CSS3
+  Angular2, TypeScript, Webpack
+
+
+/* SITE */
+	Last update:2017/08/07
+	Language: English / Castellano
+	Doctype:HTML5
+	IDE: Visual Studio Code

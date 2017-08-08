@@ -1,0 +1,8 @@
+# robotstxt.org/
+
+User-agent: *
+Disallow: /admin/
+
+User-Agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$

@@ -10,11 +10,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "./node_modules/@angular/cli/bin/ng build --prod --environment=prod --aot=true  --sourcemaps=false",
-    "build:aot": "./node_modules/@angular/cli/bin/ng build --verbose --prod --aot",
+    "build:prod": "ng build --prod --aot",
+    "docs": "typedoc --out doc --options typedoc.json --exclude 'node_modules' --exclude '**/*.spec.ts' ./src/",
+    "server:prod:ci": "http-server dist -p 3000 -c-1 --cors",
+    "server:doc": "http-server doc -p 8000 -c-1 --cors",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ci":"npm run lint && npm run test && npm run build:prod && npm run e2e"
   },
   "private": true,
   "dependencies": {
@@ -69,6 +72,7 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
+    "typedoc": "^0.8.0",
     "typescript": "~2.3.3"
   },
   "engines": {
