@@ -13,7 +13,6 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 - Type manager with @types
 - Angular 4 support via changing package.json and any future Angular versions
 
-
 ## Estructura de aplicación
 
 - src
