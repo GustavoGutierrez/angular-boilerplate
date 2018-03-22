@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 import { Map } from 'immutable';
 
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions';
+import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../../../store/tasking/tasking.actions';
 import { IAppState } from '../../../store';
 import * as R from 'ramda';
 
@@ -33,8 +33,8 @@ interface ITodo {
 })
 export class TodoComponent implements OnInit {
 
-  public todosCompleteds: number = 0;
-  public todosInCompleteds: number = 0;
+  public todosCompleteds = 0;
+  public todosInCompleteds = 0;
 
   @select(todosSelector) todos$: Observable<any>;
   @select(lastUpdateSelector) lastUpdate$: Observable<string>;
@@ -43,7 +43,6 @@ export class TodoComponent implements OnInit {
 
   ngOnInit(): void {
     this.todos$.subscribe((todos: Array<ITodo>) => {
-      console.log('oninit todos:', todos);
       this.todosCompleteds = 0;
       this.todosInCompleteds = 0;
       const hasComplete = R.has('isCompleted');
@@ -59,7 +58,10 @@ export class TodoComponent implements OnInit {
   }
 
   addTodo(input) {
-    if (!input.value) return;
+
+    if (!input.value) {
+      return;
+    }
 
     this.ngRedux.dispatch({ type: ADD_TODO, title: input.value });
     input.value = '';

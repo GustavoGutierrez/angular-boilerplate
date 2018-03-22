@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppStoreModule } from '../store/app.store'
+
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    AppStoreModule
   ],
-  declarations:[
+  declarations: [
     DashboardComponent
   ],
-  exports:[
+  exports: [
     DashboardComponent
   ]
 })

@@ -9,7 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import { JwtService } from "./services/Jwt.service";
+import { JwtService } from './services/Jwt.service';
 
 @NgModule({
   imports: [

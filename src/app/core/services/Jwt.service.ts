@@ -8,8 +8,8 @@ import {
   HttpProgressEvent,
   HttpResponse,
   HttpUserEvent
-} from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+} from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Servicio interceptor de peticiones http, este servicio intercepta todas las peticiones realizadas y le agrega la autorización
@@ -23,7 +23,11 @@ export class JwtService implements HttpInterceptor {
    * @param next HttpHandler
    * @return Observable<HttpSentEvent | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>>
    */
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent |
+  HttpHeaderResponse |
+  HttpProgressEvent |
+  HttpResponse<any> |
+  HttpUserEvent<any>> {
     // build the headers you want
     const headers = {
       'Authorization': `Bearer secretJWTToken`

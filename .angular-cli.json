@@ -23,13 +23,11 @@
       "styles": [
         "../node_modules/animate.css/animate.css",
         "../node_modules/bootstrap/scss/bootstrap.scss",
-        "../node_modules/tether/src/css/tether.sass",
         "scss/styles.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/tether/dist/js/tether.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js"
+        "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

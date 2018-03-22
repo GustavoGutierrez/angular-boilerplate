@@ -1,7 +1,7 @@
 export const config: any = {
 
-  defaultLocale: "es",
+  defaultLocale: 'es',
 
-  API_URL: "/api"
+  API_URL: '/api'
 
 }

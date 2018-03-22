@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from "@angular/core";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { NgModule } from '@angular/core';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { MetaGuard } from '@ngx-meta/core';
 
 const routes: Routes = [
