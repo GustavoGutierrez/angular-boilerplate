@@ -14,6 +14,7 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 - Angular 5 support via changing package.json and any future Angular versions
 
 ## Estructura de Aplicación
+```
 src
 ├───app
 │   ├───admin
@@ -51,3 +52,4 @@ src
     ├───settings
     ├───tools
     └───trumps
+```
