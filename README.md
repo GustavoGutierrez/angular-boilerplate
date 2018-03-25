@@ -11,47 +11,43 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 - Coverage with Istanbul and Karma
 - End-to-end Angular code using Protractor.
 - Type manager with @types
-- Angular 4 support via changing package.json and any future Angular versions
+- Angular 5 support via changing package.json and any future Angular versions
 
-## Estructura de aplicación
-
-- src
-  * app
-    - core
-      * guard
-      * layout
-      * navbar
-      * core-routing.module.ts
-      * core.module.ts
-    - shared
-      * components
-      * directives
-      * pipes
-      * app.config.ts
-      * shared.module.ts
-    - public
-      * login
-    - admin
-      * dashboard
-      * tasking -> sample module please delete 
-      * admin-routing.module.ts
-      * admin.module.ts
-  * assets
-  * enviroments
-  * scss
-    - settings
-    - tools
-    - generic
-    - elements
-    - objects
-    - components
-    - trumps
-    - styles.scss
-  * main.ts
-  * test.ts
-  * polyfills.ts
-  * typings.ts
-  * tsconfig.app.json
-  * tsconfig.spec.json
-  * favicon.ico
-  * index.html
+## Estructura de Aplicación
+src
+├───app
+│   ├───admin
+│   │   ├───dashboard
+│   │   └───tasking
+│   │       └───todo
+│   ├───core
+│   │   ├───guard
+│   │   ├───layout
+│   │   ├───navbar
+│   │   └───services
+│   ├───public
+│   │   └───login
+│   │       ├───loginForm
+│   │       └───shared
+│   ├───shared
+│   │   ├───components
+│   │   │   └───page-not-found
+│   │   ├───directives
+│   │   └───pipes
+│   └───store
+│       └───tasking
+├───assets
+│   ├───fonts
+│   ├───icon
+│   └───images
+├───docs
+├───environments
+├───meta
+└───scss
+    ├───components
+    ├───elements
+    ├───generic
+    ├───objects
+    ├───settings
+    ├───tools
+    └───trumps
