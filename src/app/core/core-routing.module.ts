@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MetaGuard } from '@ngx-meta/core';
 
 import { AuthGuard } from './guard/auth.guard';
 import { PageNotFoundComponent } from '../shared/components/page-not-found/page-not-found.component';
@@ -14,14 +13,12 @@ const routes: Routes = [
 
   {
     path: '',
-    canActivateChild: [MetaGuard],
     loadChildren: 'app/public/login/login.module#LoginModule'
   },
 
   {
     path: 'admin',
     canActivate: [AuthGuard],
-    canActivateChild: [MetaGuard],
     loadChildren: 'app/admin/admin.module#AdminModule'
   },
 

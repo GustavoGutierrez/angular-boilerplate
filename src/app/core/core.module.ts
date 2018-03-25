@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { MetaModule } from '@ngx-meta/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { LayoutComponent } from './layout/layout.component';
@@ -10,11 +9,12 @@ import { SharedModule } from '../shared/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JwtService } from './services/Jwt.service';
 
+import './fontawesome';
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MetaModule.forRoot(),
     SharedModule,
     HttpClientModule,
     CoreRoutingModule

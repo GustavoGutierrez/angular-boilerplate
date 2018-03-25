@@ -4,13 +4,7 @@ import { TodoComponent } from './todo/todo.component';
 const routes: Routes = [
   {
     path: '',
-    component: TodoComponent,
-    data: {
-      meta: {
-        title: 'Lista de tareas',
-        description: 'Lista de tareas'
-      }
-    }
+    component: TodoComponent
   }
 ];
 

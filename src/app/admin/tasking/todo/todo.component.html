@@ -1,45 +1,56 @@
-
 <div class="row">
 
   <div class="col-md-6">
     <div class="todolist not-done">
       <h1>Todos</h1>
-      <div class="input-group">
-        <input type="text" #title class="form-control add-todo" placeholder="Add todo">
-         <span class="input-group-btn">
-        <button id="checkAll" (click)="addTodo(title)" class="btn btn-primary">Add</button>
-        </span>
-    </div>
-        <hr>
-        <ul id="sortable" class="list-unstyled">
-        <ng-container *ngFor="let t of todos$ | async">
-            <li class="ui-state-default todo-item" *ngIf="!t.isCompleted">
-                <div class="checkbox">
-                    <label (click)="toggleTodo(t)"><input type="checkbox" value="" [checked]="t.isCompleted" />{{ t.title }}</label>
-                </div>
-            </li>
-            </ng-container>
-        </ul>
-
-        <div class="todo-footer">
-            <strong><span class="count-todos">{{ todosCompleteds }}</span></strong> Items
-            <p>Last Update: {{ (lastUpdate$ | async) | date:'mediumTime' }}</p>
+      <div class="input-group mb-3">
+        <input #title type="text" class="form-control" placeholder="Add todo" aria-label="Add todo" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button id="checkAll" (click)="addTodo(title)" class="btn btn-outline-primary">
+            <i class="fa fa-plus"></i> Add</button>
         </div>
+      </div>
+      <hr>
+      <ul id="sortable" class="list-unstyled">
+        <ng-container *ngFor="let t of todos$ | async">
+          <li class="ui-state-default todo-item" *ngIf="!t.isCompleted">
+            <div class="checkbox">
+              <label (click)="toggleTodo(t)">
+                <input type="checkbox" value="" [checked]="t.isCompleted" />{{ t.title }}</label>
+            </div>
+          </li>
+        </ng-container>
+      </ul>
+
+      <div class="todo-footer">
+        <strong>
+          <span class="count-todos">{{ todosCompleteds }}</span>
+        </strong> Items
+        <p>Last Update: {{ (lastUpdate$ | async) | date:'mediumTime' }}
+          <i class="fa fa-clock"></i>
+        </p>
+      </div>
     </div>
   </div>
 
   <div class="col-md-6">
-      <div class="todolist">
-        <h1>Already Done</h1>
-        <ul id="done-items" class="list-unstyled">
-          <ng-container *ngFor="let t of todos$ | async">
-              <li *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">{{ t.title }} <button (click)="removeTodo(t)" class="remove-item btn btn-danger btn-sm pull-right"><span class="fa fa-close"></span></button></li>
-          </ng-container>
-        </ul>
+    <div class="todolist">
+      <h1>Already Done</h1>
+      <ul id="done-items" class="list-unstyled">
+        <ng-container *ngFor="let t of todos$ | async">
+          <li *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">{{ t.title }}
+            <button (click)="removeTodo(t)" class="remove-item btn btn-outline-danger btn-xs">
+              <span class="fa fa-times"></span>
+            </button>
+          </li>
+        </ng-container>
+      </ul>
 
-        <div class="todo-footer">
-            <strong><span class="count-todos">{{ todosInCompleteds }}</span></strong> Items
-        </div>
+      <div class="todo-footer">
+        <strong>
+          <span class="count-todos">{{ todosInCompleteds }}</span>
+        </strong> Items
       </div>
+    </div>
   </div>
 </div>

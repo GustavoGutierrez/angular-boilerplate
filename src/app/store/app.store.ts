@@ -3,13 +3,21 @@ import { AppState, rootReducer, APP_INITIAL_STATE } from './app.reducer';
 import { StoreModule, MetaReducer, ActionReducer } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { localStorageSync } from 'ngrx-store-localstorage';
+import { storeLogger } from 'ngrx-store-logger';
 import { environment } from '../../environments/environment';
 import { keys } from 'ramda';
 
-export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+export function logger(reducer: ActionReducer<AppState>): ActionReducer<AppState> {
+  return storeLogger()(reducer);
+}
+
+export function localStorageSyncReducer(reducer: ActionReducer<AppState>): ActionReducer<AppState> {
   return localStorageSync({keys: keys(rootReducer), rehydrate: true, storage: sessionStorage})(reducer);
 }
-const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
+
+export const metaReducers: Array<MetaReducer<any, any>> =
+environment.production ? [localStorageSyncReducer]
+                      : [logger, localStorageSyncReducer];
 
 @NgModule({
   imports: [
