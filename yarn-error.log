@@ -1,17 +1,17 @@
 Arguments: 
-  /home/gustavo/.nvm/versions/node/v6.11.2/bin/node /usr/share/yarn/bin/yarn.js add @ngrx/core @ngrx/store
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js rebuild node-sass
 
 PATH: 
-  /home/gustavo/bin:/home/gustavo/.local/bin:/home/gustavo/.nvm/versions/node/v6.11.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs:/mnt/c/Program Files (x86)/Yarn/bin:/mnt/c/Program Files/Git LFS:/mnt/c/xampp/php:/mnt/c/Program Files/PuTTY:/mnt/c/Python27:/mnt/c/composer:/mnt/c/Program Files/MySQL/MySQL Utilities 1.6:/mnt/c/Program Files/Calibre2:/mnt/c/Ruby24-x64/bin:/mnt/c/Users/Gustavo/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Users/Gustavo/AppData/Roaming/npm:/mnt/c/Users/Gustavo/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Gustavo/AppData/Roaming/Composer/vendor/bin:/mnt/c/Users/Gustavo/AppData/Local/Microsoft/WindowsApps:/snap/bin
+  C:\Users\Gustavo\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Gustavo\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\Program Files\Git LFS;C:\xampp\php;C:\Program Files\PuTTY;C:\Python27;C:\composer;C:\Program Files\MySQL\MySQL Utilities 1.6;C:\Program Files\Calibre2;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Ruby24-x64\bin;C:\Users\Gustavo\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Gustavo\AppData\Local\GitHubDesktop\bin;C:\Users\Gustavo\AppData\Roaming\Composer\vendor\bin;C:\Users\Gustavo\AppData\Local\Microsoft\WindowsApps;C:\Users\Gustavo\AppData\Roaming\npm;C:\Users\Gustavo\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
-  0.27.5
+  1.5.1
 
 Node version: 
-  6.11.2
+  8.10.0
 
 Platform: 
-  linux x64
+  win32 x64
 
 npm manifest: 
   {
@@ -37,7 +37,6 @@ npm manifest:
     },
     "private": true,
     "dependencies": {
-      "@angular-redux/store": "v7.1.0",
       "@angular/animations": "5.2.9",
       "@angular/common": "5.2.9",
       "@angular/compiler": "5.2.9",
@@ -58,11 +57,7 @@ npm manifest:
       "jquery": "3.3.1",
       "lodash": "4.17.5",
       "ng2-completer": "1.6.3",
-      "popper.js": "1.14.1",
       "ramda": "0.25.0",
-      "redux": "3.7.2",
-      "redux-logger": "3.0.6",
-      "redux-sessionstorage": "^0.4.0",
       "rxjs": "5.5.7",
       "tassign": "1.0.0",
       "tether": "1.4.3",
@@ -92,6 +87,9 @@ npm manifest:
       "tslint": "5.9.1",
       "typedoc": "0.11.1",
       "typescript": "2.5.3"
+    },
+    "engines": {
+      "node":">=8.0.0"
     }
   }
 
@@ -127,10 +125,6 @@ Lockfile:
     dependencies:
       "@ngtools/json-schema" "^1.1.0"
       rxjs "^5.5.6"
-  
-  "@angular-redux/store@v7.1.0":
-    version "7.1.0"
-    resolved "https://registry.yarnpkg.com/@angular-redux/store/-/store-7.1.0.tgz#3e22da5f63cd2a2052e1a7bd7c16db4870389428"
   
   "@angular/animations@5.2.9":
     version "5.2.9"
@@ -1968,10 +1962,6 @@ Lockfile:
   decode-uri-component@^0.2.0:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  
-  deep-diff@^0.3.5:
-    version "0.3.8"
-    resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
   
   deep-equal@^1.0.1:
     version "1.0.1"
@@ -4236,10 +4226,6 @@ Lockfile:
       p-locate "^2.0.0"
       path-exists "^3.0.0"
   
-  lodash-es@^4.2.1:
-    version "4.17.4"
-    resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
-  
   lodash.assign@^4.2.0:
     version "4.2.0"
     resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
@@ -4264,7 +4250,7 @@ Lockfile:
     version "4.17.5"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
   
-  lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.1, lodash@^4.5.0, lodash@~4.17.4:
+  lodash@^4.0.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.5.0, lodash@~4.17.4:
     version "4.17.4"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
   
@@ -4303,7 +4289,7 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
   
-  loose-envify@^1.0.0, loose-envify@^1.1.0:
+  loose-envify@^1.0.0:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
     dependencies:
@@ -5265,10 +5251,6 @@ Lockfile:
     dependencies:
       find-up "^2.1.0"
   
-  popper.js@1.14.1:
-    version "1.14.1"
-    resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.1.tgz#b8815e5cda6f62fc2042e47618649f75866e6753"
-  
   portfinder@^1.0.9, portfinder@~1.0.12:
     version "1.0.13"
     resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -5718,25 +5700,6 @@ Lockfile:
       double-ended-queue "^2.1.0-0"
       redis-commands "^1.2.0"
       redis-parser "^2.6.0"
-  
-  redux-logger@3.0.6:
-    version "3.0.6"
-    resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
-    dependencies:
-      deep-diff "^0.3.5"
-  
-  redux-sessionstorage@^0.4.0:
-    version "0.4.0"
-    resolved "https://registry.yarnpkg.com/redux-sessionstorage/-/redux-sessionstorage-0.4.0.tgz#06a8fd646c703ad610ffcff1fcdffcf1e99a1fcd"
-  
-  redux@3.7.2:
-    version "3.7.2"
-    resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
-    dependencies:
-      lodash "^4.2.1"
-      lodash-es "^4.2.1"
-      loose-envify "^1.1.0"
-      symbol-observable "^1.0.3"
   
   reflect-metadata@^0.1.2:
     version "0.1.10"
@@ -6760,10 +6723,6 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
   
-  symbol-observable@^1.0.3:
-    version "1.2.0"
-    resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
-  
   syntax-error@^1.1.1:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/syntax-error/-/syntax-error-1.4.0.tgz#2d9d4ff5c064acb711594a3e3b95054ad51d907c"
@@ -7675,14 +7634,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.20.tgz#a218c48db09464b19ff6fc8f0d4bb5b1046e185d"
 
 Trace: 
-  Error: https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.7.tgz: ESOCKETTIMEDOUT
-      at ClientRequest.<anonymous> (/usr/share/yarn/lib/yarn-cli.js:114873:19)
-      at ClientRequest.g (events.js:292:16)
-      at emitNone (events.js:86:13)
-      at ClientRequest.emit (events.js:185:7)
-      at TLSSocket.emitTimeout (_http_client.js:630:10)
-      at TLSSocket.g (events.js:292:16)
-      at emitNone (events.js:86:13)
-      at TLSSocket.emit (events.js:185:7)
-      at TLSSocket.Socket._onTimeout (net.js:338:8)
-      at ontimeout (timers.js:386:14)
+  Error: Command "rebuild" not found.
+      at new MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (C:\Program Files (x86)\Yarn\lib\cli.js:23451:28)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:95:12
+      at runCommand (C:\Program Files (x86)\Yarn\lib\cli.js:87312:22)
+      at Object.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:87412:14)

@@ -1,23 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgRedux, select } from '@angular-redux/store';
-import { Observable } from 'rxjs/Observable';
-import { Map } from 'immutable';
-
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../../../store/tasking/tasking.actions';
-import { IAppState } from '../../../store';
+import * as tasking from '../../../store/tasking/tasking.actions';
+import { AppState } from '../../../store';
+import { Store, select } from '@ngrx/store';
 import * as R from 'ramda';
-
-/**
- * Required for Aot
- * @param state
- */
-export function todosSelector(state: IAppState): any {
-  return state.tasking.todos;
-}
-
-export function lastUpdateSelector(state: IAppState): any {
-  return state.tasking.lastUpdate;
-}
+import { Observable } from 'rxjs/Observable';
 
 interface ITodo {
   id: number;
@@ -33,22 +19,24 @@ interface ITodo {
 })
 export class TodoComponent implements OnInit {
 
-  public todosCompleteds = 0;
-  public todosInCompleteds = 0;
+  public todos$: Observable<any>;
+  public lastUpdate$: Observable<Date>;
+  public todosCompleteds: number;
+  public todosInCompleteds: number;
+  private hasComplete: any = R.has('isCompleted');
 
-  @select(todosSelector) todos$: Observable<any>;
-  @select(lastUpdateSelector) lastUpdate$: Observable<string>;
-
-  constructor(private ngRedux: NgRedux<Map<string, any>>) { }
+  constructor(private store: Store<AppState>) {
+    this.todos$ = store.pipe(select((state: AppState) => state.tasking.todos ));
+    this.lastUpdate$ = store.pipe(select((state: AppState) => state.tasking.lastUpdate));
+  }
 
   ngOnInit(): void {
-    this.todos$.subscribe((todos: Array<ITodo>) => {
+    this.todos$.subscribe((todos: any) => {
       this.todosCompleteds = 0;
       this.todosInCompleteds = 0;
-      const hasComplete = R.has('isCompleted');
 
       todos.forEach((todo: ITodo) => {
-        if (!todo.isCompleted || !hasComplete(todo)) {
+        if (!todo.isCompleted || !this.hasComplete(todo)) {
           this.todosCompleteds++;
         } else {
           this.todosInCompleteds++;
@@ -58,21 +46,19 @@ export class TodoComponent implements OnInit {
   }
 
   addTodo(input) {
-
     if (!input.value) {
       return;
     }
-
-    this.ngRedux.dispatch({ type: ADD_TODO, title: input.value });
+    this.store.dispatch(new tasking.AddTodoAction(input.value));
     input.value = '';
   }
 
   toggleTodo(todo) {
-    this.ngRedux.dispatch({ type: TOGGLE_TODO, id: todo.id });
+   this.store.dispatch(new tasking.ToggleTodoAction(todo.id));
   }
 
   removeTodo(todo) {
-    this.ngRedux.dispatch({ type: REMOVE_TODO, id: todo.id });
+    this.store.dispatch(new tasking.RemoveTodoAction(todo.id));
   }
 
 }

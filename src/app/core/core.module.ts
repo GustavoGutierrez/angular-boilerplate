@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { NgReduxModule } from '@angular-redux/store';
 import { MetaModule } from '@ngx-meta/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -16,7 +15,6 @@ import { JwtService } from './services/Jwt.service';
     CommonModule,
     RouterModule,
     MetaModule.forRoot(),
-    NgReduxModule,
     SharedModule,
     HttpClientModule,
     CoreRoutingModule

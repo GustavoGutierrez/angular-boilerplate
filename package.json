@@ -21,7 +21,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-redux/store": "v7.1.0",
     "@angular/animations": "5.2.9",
     "@angular/common": "5.2.9",
     "@angular/compiler": "5.2.9",
@@ -32,6 +31,7 @@
     "@angular/platform-browser-dynamic": "5.2.9",
     "@angular/router": "5.2.9",
     "@ngrx/store": "^5.2.0",
+    "@ngrx/store-devtools": "^5.2.0",
     "@ngx-meta/core": "5.0.0",
     "animate.css": "3.6.1",
     "bootstrap": "4.0.0",
@@ -42,11 +42,9 @@
     "jquery": "3.3.1",
     "lodash": "4.17.5",
     "ng2-completer": "1.6.3",
-    "popper.js": "1.14.1",
+    "ngrx-store-localstorage": "^5.0.0",
+    "popper.js": "^1.12.9",
     "ramda": "0.25.0",
-    "redux": "3.7.2",
-    "redux-logger": "3.0.6",
-    "redux-sessionstorage": "^0.4.0",
     "rxjs": "5.5.7",
     "tassign": "1.0.0",
     "tether": "1.4.3",
@@ -78,6 +76,6 @@
     "typescript": "2.5.3"
   },
   "engines": {
-    "node":">=6.0.0"
+    "node": ">=8.0.0"
   }
 }

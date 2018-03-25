@@ -11,9 +11,6 @@ export class DashboardComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.httpClient.get('https://jsonplaceholder.typicode.com/posts').subscribe(response => {
-      const posts = response;
-    });
   }
 
 }

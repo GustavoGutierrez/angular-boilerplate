@@ -1,7 +1,6 @@
 import { Action } from '@ngrx/store';
 import { tassign } from 'tassign';
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO, CLEAR_TODOS } from './tasking.actions';
-import { Map, fromJS } from 'immutable';
+import { TaskingActionTypes, TaskingActions } from './tasking.actions';
 
 export interface ITaskingState {
   todos: any[];
@@ -15,12 +14,10 @@ export const TASKING_INITIAL_STATE: ITaskingState = {
 
 class TodoActions {
 
-  constructor(private state: ITaskingState, private action: Action) {
-    console.log(this.action);
-  }
+  constructor(private state: ITaskingState, private action: TaskingActions) { }
 
   addTodo() {
-    const payload = this.action.title;
+    const payload = this.action.payload;
     const newTodo = { id: new Date().getTime(), title: payload };
 
     return tassign(this.state, {
@@ -30,7 +27,7 @@ class TodoActions {
   }
 
   toggleTodo() {
-    const todo = this.state.todos.find(t => t.id === this.action.id);
+    const todo = this.state.todos.find(t => t.id === this.action.payload);
     const index = this.state.todos.indexOf(todo);
     return tassign(this.state, {
       todos: [
@@ -44,7 +41,7 @@ class TodoActions {
 
   removeTodo() {
     return tassign(this.state, {
-      todos: this.state.todos.filter(t => t.id !== this.action.id),
+      todos: this.state.todos.filter(t => t.id !== this.action.payload),
       lastUpdate: new Date()
     });
   }
@@ -58,16 +55,29 @@ class TodoActions {
 
 }
 
-export function taskingReducer(state: ITaskingState = TASKING_INITIAL_STATE, action: Action): ITaskingState {
+export function taskingReducer(state: ITaskingState = TASKING_INITIAL_STATE, action: TaskingActions): ITaskingState {
 
   const todoActions: TodoActions = new TodoActions(state, action);
 
   switch (action.type) {
-    case ADD_TODO: return todoActions.addTodo();
-    case TOGGLE_TODO: return todoActions.toggleTodo();
-    case REMOVE_TODO: return todoActions.removeTodo();
-    case CLEAR_TODOS: return todoActions.clearTodos();
-  }
+    case TaskingActionTypes.add: {
+      return todoActions.addTodo();
+    }
 
-  return state;
+    case TaskingActionTypes.toggle: {
+      return todoActions.toggleTodo();
+    }
+
+    case TaskingActionTypes.remove: {
+      return todoActions.removeTodo();
+    }
+
+    case TaskingActionTypes.clear: {
+      return todoActions.clearTodos();
+    }
+
+    default: {
+      return state;
+    }
+  }
 }
