@@ -22,12 +22,10 @@
       "prefix": "app",
       "styles": [
         "../node_modules/animate.css/animate.css",
-        "../node_modules/bootstrap/scss/bootstrap.scss",
+        "../node_modules/gridlex/dist/gridlex.css",
         "scss/styles.scss"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,12 +1,55 @@
-<div class="row">
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <span>Angular Material Example</span>
 
-  <div class="col-md-6">
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Menu 1</span>
+  </button>
+    <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Menu 2</span>
+  </button>
+    <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Menu 3</span>
+  </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Angular</mat-card-title>
+    <mat-card-subtitle>Material 2</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://loiane.com/images/tags/angular.svg" height="300px">
+  <mat-card-content>
+    <p>
+      Material Design components for Angular
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<div class="grid">
+
+  <div class="col-6">
     <div class="todolist not-done">
       <h1>Todos</h1>
       <div class="input-group mb-3">
-        <input #title type="text" class="form-control" placeholder="Add todo" aria-label="Add todo" aria-describedby="basic-addon2">
+        <mat-form-field class="example-full-width">
+          <input #title matInput placeholder="Add todo">
+        </mat-form-field>
+
         <div class="input-group-append">
-          <button id="checkAll" (click)="addTodo(title)" class="btn btn-outline-primary">
+          <button id="checkAll" (click)="addTodo(title)"  mat-raised-button color="primary">
             <i class="fa fa-plus"></i> Add</button>
         </div>
       </div>
@@ -33,13 +76,13 @@
     </div>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-6">
     <div class="todolist">
       <h1>Already Done</h1>
       <ul id="done-items" class="list-unstyled">
         <ng-container *ngFor="let t of todos$ | async">
           <li *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">{{ t.title }}
-            <button (click)="removeTodo(t)" class="remove-item btn btn-outline-danger btn-xs">
+            <button (click)="removeTodo(t)" mat-raised-button color="warn" class="remove-item">
               <span class="fa fa-times"></span>
             </button>
           </li>
