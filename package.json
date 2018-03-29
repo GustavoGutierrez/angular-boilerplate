@@ -1,23 +1,18 @@
 {
   "name": "angular-boilerplate",
-  "author": {
-    "email": "gustavogutierrezmercado@gmail.com",
-    "name": "Gustavo Gutierrez",
-    "url": "http://gustavogutierrez.co"
-  },
-  "version": "0.0.1",
+  "version": "2.0.0",
+  "description": "Base project to start SPA applications using Angular 5, Ngrx, Material Design and the best CSS and Javascript architecture practices",
   "license": "(MIT or GPL-3.0)",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build:prod": "ng build --prod --aot",
-    "docs": "typedoc --out doc --options typedoc.json --exclude 'node_modules' --exclude '**/*.spec.ts' ./src/",
-    "server:prod:ci": "http-server dist -p 3000 -c-1 --cors",
-    "server:doc": "http-server doc -p 8000 -c-1 --cors",
+    "build:doc": "typedoc --out doc --options typedoc.json --exclude 'node_modules' --exclude '**/*.spec.ts' ./src/",
+    "start:doc": "http-server doc -p 8000 -c-1 --cors",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ci": "npm run lint && npm run test && npm run build:prod && npm run e2e"
+    "ci": "yarn lint && yarn test && yarn build:prod && yarn e2e"
   },
   "private": true,
   "dependencies": {
@@ -73,7 +68,20 @@
     "typedoc": "0.11.1",
     "typescript": "2.5.3"
   },
+  "author": {
+    "email": "gustavogutierrezmercado@gmail.com",
+    "name": "Gustavo Gutierrez",
+    "url": "http://gustavogutierrez.co"
+  },
+  "keywords": [
+    "Angular",
+    "Angular 5",
+    "Boilerplate",
+    "Ngrx",
+    "Material Design"
+  ],
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=6.0.0",
+    "yarn": "^1.5.1"
   }
 }

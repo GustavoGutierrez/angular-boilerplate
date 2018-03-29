@@ -10,7 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "meta/robots.txt",
+        "robots.txt",
         "meta/humans.txt"
       ],
       "index": "index.html",

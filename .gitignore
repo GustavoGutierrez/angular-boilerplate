@@ -7,6 +7,8 @@
 /out-tsc
 /aot
 yarn.lock
+yarn-error.log
+package-error.log
 
 # dependencies
 /node_modules
