@@ -1,24 +1,23 @@
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" [routerLink]="['/admin']">NgBoilerplate</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <a class="nav-link" [routerLink]="['admin']">Dashboard</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['admin/tasking']">Tasking</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav  mt-2 mt-md-0">
-        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <a class="nav-link" href="#" (click)="singOut($event)">Sing Out</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu" matSufix>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <span>NgBoilerplate</span>
+  <a mat-button [routerLink]="['admin']">Dashboard</a>
+  <a mat-button [routerLink]="['admin/tasking']">Tasking</a>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item disabled>
+    <mat-icon>perm_identity</mat-icon>
+    <span>Profile</span>
+  </button>
+    <button mat-menu-item disabled>
+    <mat-icon>help_outline</mat-icon>
+    <span>Help</span>
+  </button>
+    <button mat-menu-item  (click)="singOut($event)">
+    <mat-icon>power_settings_new</mat-icon>
+    <span>Sing Up</span>
+  </button>
+  </mat-menu>
+</mat-toolbar>

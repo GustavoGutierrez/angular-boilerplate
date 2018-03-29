@@ -1,87 +1,26 @@
-.row-container-login{
-  height: 100vh;
-}
-.card-container.card {
-    max-width: 350px;
-    padding: 40px 40px;
-}
-
-/*
- * Card component
- */
-.card {
-    background-color: #F7F7F7;
-    padding: 20px 25px 30px;
+.form-signin {
+  margin-bottom: 15px;
+  button[type="submit"]{
     margin: 0 auto;
-    border-radius: 5px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
 }
-
-.profile-img-card {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 10px;
-    display: block;
-    border-radius: 50%;
+.card-login-logo {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: block;
 }
-
-/*
- * Form styles
- */
-.profile-name-card {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0 0;
-    min-height: 1em;
-}
-
-.reauth-email {
-    display: block;
-    line-height: 2;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    box-sizing: border-box;
-}
-
-.form-signin #inputEmail,
-.form-signin #inputPassword {
-    direction: ltr;
-    height: 44px;
-    font-size: 16px;
-}
-
-.form-signin input[type=email],
-.form-signin input[type=password],
-.form-signin input[type=text],
-.form-signin button {
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.form-signin .form-control:focus {
-    outline: 0;
-}
-
-.btn.btn-signin {
-    padding: 0px;
-    font-weight: 700;
-    font-size: 14px;
-    height: 36px;
-    border: none;
-    transition: all 0.218s;
-    cursor:pointer;
-}
-
 .forgot-password {
-  text-align: left;
+  text-align: center;
   font-size: 14px;
+}
+.card-login-form {
+  border: solid #ccc 1px;
+  border-radius: 5px;
+}
+
+.container-form-login {
+  height: 100vh;
+  margin: -15px;
 }

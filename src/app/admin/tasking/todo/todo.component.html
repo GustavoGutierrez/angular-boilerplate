@@ -1,93 +1,45 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <span>Angular Material Example</span>
+<div class="grid-noGutter">
 
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-    <mat-icon>dialpad</mat-icon>
-    <span>Menu 1</span>
-  </button>
-    <button mat-menu-item disabled>
-    <mat-icon>voicemail</mat-icon>
-    <span>Menu 2</span>
-  </button>
-    <button mat-menu-item>
-    <mat-icon>notifications_off</mat-icon>
-    <span>Menu 3</span>
-  </button>
-  </mat-menu>
-</mat-toolbar>
+  <div class="col-6_sm-12">
+      <mat-card>
+        <mat-card-title><mat-icon>work</mat-icon> Tasking</mat-card-title>
 
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Angular</mat-card-title>
-    <mat-card-subtitle>Material 2</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://loiane.com/images/tags/angular.svg" height="300px">
-  <mat-card-content>
-    <p>
-      Material Design components for Angular
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+        <mat-card-content>
+            <mat-form-field class="example-full-width">
+              <span matPrefix><mat-icon>add</mat-icon> &nbsp;</span>
+              <input #title matInput placeholder="Add Todo:" (keyup.enter)="onEnter(title)">
+            </mat-form-field>
 
-<div class="grid">
+          <mat-list>
+            <ng-container *ngFor="let t of todos$ | async">
+              <mat-list-item *ngIf="!t.isCompleted">
+                <mat-checkbox class="example-margin" (change)="toggleTodo(t)">{{ t.title }}</mat-checkbox>
+              </mat-list-item>
+            </ng-container>
+          </mat-list>
+        </mat-card-content>
 
-  <div class="col-6">
-    <div class="todolist not-done">
-      <h1>Todos</h1>
-      <div class="input-group mb-3">
-        <mat-form-field class="example-full-width">
-          <input #title matInput placeholder="Add todo">
-        </mat-form-field>
+        <mat-card-footer class="todo-footer">
+          <p><strong>{{ todosCompleteds }}</strong> Items - Last Update: {{ (lastUpdate$ | async) | date:'mediumTime' }} <mat-icon>av_timer</mat-icon></p>
+        </mat-card-footer>
 
-        <div class="input-group-append">
-          <button id="checkAll" (click)="addTodo(title)"  mat-raised-button color="primary">
-            <i class="fa fa-plus"></i> Add</button>
-        </div>
-      </div>
-      <hr>
-      <ul id="sortable" class="list-unstyled">
-        <ng-container *ngFor="let t of todos$ | async">
-          <li class="ui-state-default todo-item" *ngIf="!t.isCompleted">
-            <div class="checkbox">
-              <label (click)="toggleTodo(t)">
-                <input type="checkbox" value="" [checked]="t.isCompleted" />{{ t.title }}</label>
-            </div>
-          </li>
-        </ng-container>
-      </ul>
+      </mat-card>
 
-      <div class="todo-footer">
-        <strong>
-          <span class="count-todos">{{ todosCompleteds }}</span>
-        </strong> Items
-        <p>Last Update: {{ (lastUpdate$ | async) | date:'mediumTime' }}
-          <i class="fa fa-clock"></i>
-        </p>
-      </div>
-    </div>
   </div>
 
-  <div class="col-6">
+  <div class="col-6_sm-12">
     <div class="todolist">
       <h1>Already Done</h1>
-      <ul id="done-items" class="list-unstyled">
+      <mat-list>
         <ng-container *ngFor="let t of todos$ | async">
-          <li *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">{{ t.title }}
-            <button (click)="removeTodo(t)" mat-raised-button color="warn" class="remove-item">
-              <span class="fa fa-times"></span>
+          <mat-list-item *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">
+            <mat-checkbox class="example-margin" [checked]="t.isCompleted" disabled="true">{{ t.title }}</mat-checkbox>
+            <button (click)="removeTodo(t)" mat-mini-fab color="warn" class="remove-item">
+              <mat-icon aria-label="Delete task">delete</mat-icon>
             </button>
-          </li>
+          </mat-list-item>
         </ng-container>
-      </ul>
+      </mat-list>
 
       <div class="todo-footer">
         <strong>

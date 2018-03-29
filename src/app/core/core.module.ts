@@ -8,6 +8,13 @@ import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JwtService } from './services/Jwt.service';
+import {
+  MatButtonModule,
+  MatToolbarModule,
+  MatMenuModule,
+  MatIconModule,
+  MatSidenavModule,
+} from '@angular/material';
 
 import './fontawesome';
 
@@ -17,7 +24,13 @@ import './fontawesome';
     RouterModule,
     SharedModule,
     HttpClientModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatSidenavModule,
   ],
   providers: [
     {

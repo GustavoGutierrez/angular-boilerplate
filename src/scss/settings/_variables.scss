@@ -1,2 +1,101 @@
-// Font Awesome Path font
-$fa-font-path : '../../node_modules/font-awesome/fonts';
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$theme-primary: (
+50: #e3f2fd,
+100: #bbdefb,
+200: #90caf9,
+300: #64b5f6,
+400: #42a5f5,
+500: #2196f3,
+600: #1e88e5,
+700: #1976d2,
+800: #1565c0,
+900: #0d47a1,
+A100: #82b1ff,
+A200: #448aff,
+A400: #2979ff,
+A700: #2962ff,
+contrast: (
+50: $dark-primary-text,
+100: $dark-primary-text,
+200: $dark-primary-text,
+300: $dark-primary-text,
+400: $dark-primary-text,
+500: $light-primary-text,
+600: $light-primary-text,
+700: $light-primary-text,
+800: $light-primary-text,
+900: $light-primary-text,
+A100: $dark-primary-text,
+A200: $light-primary-text,
+A400: $light-primary-text,
+A700: $light-primary-text,
+)
+);
+
+$theme-accent: (
+  50: #fce4ec,
+  100: #f8bbd0,
+  200: #f48fb1,
+  300: #f06292,
+  400: #ec407a,
+  500: #e91e63,
+  600: #d81b60,
+  700: #c2185b,
+  800: #ad1457,
+  900: #880e4f,
+  A100: #ff80ab,
+  A200: #ff4081,
+  A400: #f50057,
+  A700: #c51162,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$theme-danger: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);

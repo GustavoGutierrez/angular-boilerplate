@@ -1,4 +1,15 @@
 <app-navbar *ngIf="!isActiveRoute('/')"></app-navbar>
-<div class="container-fluid">
-  <router-outlet></router-outlet>
-</div>
+
+<mat-drawer-container class="app-container" autosize>
+  <mat-drawer #drawer class="app-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button *ngIf="!isActiveRoute('/')" (click)="showFiller = !showFiller" mat-raised-button color="warn">Toggle extra text</button>
+  </mat-drawer>
+
+  <div class="app-sidenav-content">
+    <button type="button" *ngIf="!isActiveRoute('/')" (click)="drawer.toggle()" mat-raised-button color="primary">Toggle sidenav</button>
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-drawer-container>

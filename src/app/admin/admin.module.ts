@@ -8,14 +8,14 @@ import { AppStoreModule } from '../store/app.store';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    AppStoreModule,
+    AppStoreModule
   ],
   declarations: [
     DashboardComponent
   ],
   exports: [
-    DashboardComponent,
-  ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    DashboardComponent
+  ]
+
 })
 export class AdminModule { }

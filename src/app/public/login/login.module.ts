@@ -7,13 +7,26 @@ import { HttpModule } from '@angular/http';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginFormComponent } from './loginForm/loginForm.component';
 
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatCardModule,
+  MatInputModule
+} from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
     HttpModule,
     FormsModule,
     RouterModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatCardModule,
+    MatInputModule
   ],
   declarations: [
     LoginFormComponent

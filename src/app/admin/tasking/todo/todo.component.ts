@@ -61,4 +61,8 @@ export class TodoComponent implements OnInit {
     this.store.dispatch(new tasking.RemoveTodoAction(todo.id));
   }
 
+  onEnter(input) {
+    this.addTodo(input);
+  }
+
 }

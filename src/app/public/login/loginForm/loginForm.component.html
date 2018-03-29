@@ -1,20 +1,30 @@
-<div class="row align-items-center row-container-login">
-    <div class="col-lg-4 card card-container">
-        <img id="profile-img" class="profile-img-card" src="/assets/images/avatar_2x.png" />
-        <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin">
-            <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div id="remember" class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button (click)="signin()" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-        </form>
-        <a href="#" class="forgot-password">
-            Forgot the password?
-        </a>
-    </div>
+<div class="grid-noGunter-middle-center container-form-login">
+  <mat-card class="col-4_sm-12 card-login-form">
+    <mat-card-title>
+      <img id="profile-img" class="card-login-logo" src="/assets/images/avatar_2x.png" />
+    </mat-card-title>
+    <mat-card-content>
+      <form class="grid form-signin">
+        <mat-form-field class="col-12">
+          <span matPrefix>
+            <mat-icon>email</mat-icon> &nbsp;</span>
+          <input #email matInput placeholder="Email address" required>
+        </mat-form-field>
+
+        <mat-form-field class="col-12">
+          <span matPrefix><mat-icon>vpn_key</mat-icon> &nbsp;</span>
+          <input #password matInput type="password" placeholder="Password" required>
+        </mat-form-field>
+
+        <div id="remember" class="col-12">
+          <mat-checkbox [checked]="true" color="primary">Remember me</mat-checkbox>
+        </div>
+
+        <button (click)="signin()" type="submit" mat-raised-button color="primary"><mat-icon>account_circle</mat-icon> Sign in</button>
+      </form>
+      <div class="grid-center">
+        <a href="#" mat-button color="primary" class="forgot-password">Forgot the password?</a>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>
