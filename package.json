@@ -9,7 +9,8 @@
     "build:prod": "ng build --prod --aot",
     "build:doc": "typedoc --out doc --options typedoc.json --exclude 'node_modules' --exclude '**/*.spec.ts' ./src/",
     "start:doc": "http-server doc -p 8000 -c-1 --cors",
-    "test": "ng test",
+    "start:coverage":"http-server -c-1 -o -p 9875 ./coverage",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ci": "yarn lint && yarn test && yarn build:prod && yarn e2e"
