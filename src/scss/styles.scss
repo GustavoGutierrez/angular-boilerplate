@@ -1,17 +1,16 @@
-
+/// @author Gustavo Gutierrez
 /**
  * ITCSS:
  * Metodología para escribir código que es escalable y fácil de manipular.
  **/
-
-// SETTINGS
+/// @group SETTINGS
 // Esto contiene cualquier configuración global para su proyecto.
   @import "settings/variables";
 
-// TOOLS
+/// @group TOOLS
 // Herramientas disponibles a nivel mundial, es decir, mezclas y funciones (mixins).
 
-// GENERIC
+/// @group GENERIC
 // Contiene cosas como Normalize.css, reglas globales de tamaño de caja, restablecimientos CSS
   @import "generic/theming";
 
