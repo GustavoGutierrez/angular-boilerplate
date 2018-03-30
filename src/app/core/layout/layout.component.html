@@ -8,7 +8,7 @@
   </mat-drawer>
 
   <div class="app-sidenav-content">
-    <button type="button" *ngIf="!isActiveRoute('/')" (click)="drawer.toggle()" mat-raised-button color="primary">Toggle sidenav</button>
+    <button type="button" class="btn-toggle-sidenav" *ngIf="!isActiveRoute('/')" (click)="drawer.toggle()" mat-raised-button color="primary">Toggle sidenav</button>
     <router-outlet></router-outlet>
   </div>
 

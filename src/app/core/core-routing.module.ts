@@ -13,7 +13,7 @@ const routes: Routes = [
 
   {
     path: '',
-    loadChildren: 'app/public/login/login.module#LoginModule'
+    loadChildren: 'app/public/public.module#PublicModule'
   },
 
   {

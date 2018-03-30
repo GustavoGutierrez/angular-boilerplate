@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as tasking from '../../../store/tasking/tasking.actions';
-import { AppState } from '../../../store';
+import { State } from '../../../store';
 import { Store, select } from '@ngrx/store';
 import * as R from 'ramda';
 import { Observable } from 'rxjs/Observable';
@@ -25,9 +25,9 @@ export class TodoComponent implements OnInit {
   public todosInCompleteds: number;
   private hasComplete: any = R.has('isCompleted');
 
-  constructor(private store: Store<AppState>) {
-    this.todos$ = store.pipe(select((state: AppState) => state.tasking.todos ));
-    this.lastUpdate$ = store.pipe(select((state: AppState) => state.tasking.lastUpdate));
+  constructor(private store: Store<State>) {
+    this.todos$ = store.pipe(select((state: State) => state.tasking.todos ));
+    this.lastUpdate$ = store.pipe(select((state: State) => state.tasking.lastUpdate));
   }
 
   ngOnInit(): void {

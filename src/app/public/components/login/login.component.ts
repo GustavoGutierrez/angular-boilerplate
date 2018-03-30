@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-loginform',
+  selector: 'app-login',
   moduleId: module.id,
-  templateUrl: './loginForm.component.html',
-  styleUrls: ['./loginForm.component.scss']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
 

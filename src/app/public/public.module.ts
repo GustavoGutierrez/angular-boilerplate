@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import { LoginRoutingModule } from './login-routing.module';
-import { LoginFormComponent } from './loginForm/loginForm.component';
+import { PublicRoutingModule } from './public-routing.module';
+import { LoginComponent } from './components';
 
 import {
   MatButtonModule,
@@ -18,10 +18,10 @@ import {
 @NgModule({
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     RouterModule,
-    LoginRoutingModule,
+    PublicRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
@@ -29,7 +29,7 @@ import {
     MatInputModule
   ],
   declarations: [
-    LoginFormComponent
+    LoginComponent
   ]
 })
-export class LoginModule { }
+export class PublicModule { }

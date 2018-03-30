@@ -1,51 +1,61 @@
-<div class="grid-noGutter">
+<div class="grid">
 
   <div class="col-6_sm-12">
-      <mat-card>
-        <mat-card-title><mat-icon>work</mat-icon> Tasking</mat-card-title>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>work</mat-icon> Tasking</mat-card-title>
 
-        <mat-card-content>
-            <mat-form-field class="example-full-width">
-              <span matPrefix><mat-icon>add</mat-icon> &nbsp;</span>
-              <input #title matInput placeholder="Add Todo:" (keyup.enter)="onEnter(title)">
-            </mat-form-field>
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>
+            <mat-icon>add</mat-icon> &nbsp;</span>
+          <input #title matInput placeholder="Add Todo:" (keyup.enter)="onEnter(title)">
+        </mat-form-field>
 
-          <mat-list>
-            <ng-container *ngFor="let t of todos$ | async">
-              <mat-list-item *ngIf="!t.isCompleted">
-                <mat-checkbox class="example-margin" (change)="toggleTodo(t)">{{ t.title }}</mat-checkbox>
-              </mat-list-item>
-            </ng-container>
-          </mat-list>
-        </mat-card-content>
+        <mat-list>
+          <ng-container *ngFor="let t of todos$ | async">
+            <mat-list-item *ngIf="!t.isCompleted">
+              <mat-checkbox class="example-margin" (change)="toggleTodo(t)">{{ t.title }}</mat-checkbox>
+            </mat-list-item>
+          </ng-container>
+        </mat-list>
+      </mat-card-content>
 
-        <mat-card-footer class="todo-footer">
-          <p><strong>{{ todosCompleteds }}</strong> Items - Last Update: {{ (lastUpdate$ | async) | date:'mediumTime' }} <mat-icon>av_timer</mat-icon></p>
-        </mat-card-footer>
+      <mat-card-footer class="todo-footer">
+        <p>
+          <strong>{{ todosCompleteds }}</strong> Items - Last Update: {{ (lastUpdate$ | async) | date:'mediumTime' }}
+          <mat-icon>av_timer</mat-icon>
+        </p>
+      </mat-card-footer>
 
-      </mat-card>
+    </mat-card>
 
   </div>
 
   <div class="col-6_sm-12">
-    <div class="todolist">
-      <h1>Already Done</h1>
-      <mat-list>
-        <ng-container *ngFor="let t of todos$ | async">
-          <mat-list-item *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">
-            <mat-checkbox class="example-margin" [checked]="t.isCompleted" disabled="true">{{ t.title }}</mat-checkbox>
-            <button (click)="removeTodo(t)" mat-mini-fab color="warn" class="remove-item">
-              <mat-icon aria-label="Delete task">delete</mat-icon>
-            </button>
-          </mat-list-item>
-        </ng-container>
-      </mat-list>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>work</mat-icon> Already Done</mat-card-title>
 
-      <div class="todo-footer">
-        <strong>
-          <span class="count-todos">{{ todosInCompleteds }}</span>
-        </strong> Items
-      </div>
-    </div>
+      <mat-card-content>
+        <mat-list>
+          <ng-container *ngFor="let t of todos$ | async">
+            <mat-list-item *ngIf="t.isCompleted" [class.completed]="t.isCompleted" class="todo-item">
+                <mat-checkbox class="example-margin" matLine [checked]="t.isCompleted" disabled="true">{{ t.title }}</mat-checkbox>
+                  <button (click)="removeTodo(t)" mat-icon-button color="warn" class="remove-item">
+                    <mat-icon aria-label="Delete task">delete</mat-icon>
+                  </button>
+            </mat-list-item>
+          </ng-container>
+        </mat-list>
+      </mat-card-content>
+
+      <mat-card-footer class="todo-footer">
+        <p>
+          <strong>{{ todosInCompleteds }}</strong> Items
+        </p>
+      </mat-card-footer>
+    </mat-card>
+
   </div>
 </div>

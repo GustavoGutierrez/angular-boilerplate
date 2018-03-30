@@ -59,7 +59,7 @@ src
 
 ## Herramientas y modulos usados
 
-- Simple. Robust. Responsive. Flexible. Built with Sass.
+- Gridlex: Simple. Robust. Responsive. Flexible. Built with Sass.
 
   http://gridlex.devlint.fr
 
@@ -71,7 +71,7 @@ src
 
   https://material.angular.io
 
-- SassDoc is to Sass what JSDoc is to JavaScript: a documentation system to build pretty and powerful docs in the blink of an eye.
+- SassDoc: a documentation system to build pretty and powerful docs in the blink of an eye.
 
   http://sassdoc.com
 
