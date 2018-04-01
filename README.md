@@ -18,6 +18,7 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 ## Estructura de Aplicación
 
 ```console
+src
 ├───app
 │   ├───admin
 │   │   ├───components

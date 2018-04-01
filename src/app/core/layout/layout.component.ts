@@ -4,7 +4,6 @@ import { Router, UrlTree } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
-  moduleId: module.id,
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
