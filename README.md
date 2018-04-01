@@ -102,10 +102,10 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 **Formulario de login**
 ![Login Form](/src/assets/images/example/login-form.jpg)
 
-**Home de la App**
+**Home del App**
 ![Home admin page](/src/assets/images/example/home.jpg)
 
-**Ejample Store App**
+**Ejemplo Store App**
 ![Todo page](/src/assets/images/example/todo-interface.jpg)
 
 ## License
