@@ -15,7 +15,6 @@ export class TaskingEffects {
     private todoService: TodoService
   ) { }
 
-  // tslint:disable-next-line:member-ordering
   @Effect()
   addTask$ = this.actions$
     .ofType(TaskingActions.ADD_TODO)
@@ -27,7 +26,7 @@ export class TaskingEffects {
             console.log('Effect Response:', response);
             return new TaskingActions.AddTodoSuccess(response);
           })
-        )
+        );
       })
     );
 

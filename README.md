@@ -5,7 +5,7 @@ Con el uso de librerías como: [Ramda](http://ramdajs.com), [Immutable](https://
 
 Este proyecto ofrece una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo. proponiendo el uso de la immutabilidad con la programación funcional para hacer a nuestros proyectos fácilmente escalables y predecible tanto en Javascript como en CSS; En css se implementa una arquitectura escalable y mantenible con el uso de de ITCSS [http://itcss.io](http://itcss.io/).
 
-## Caracteristicas
+## Características
 
 - Buenas practicas en la organización de archivos de la aplicación Angular.
 - Compilación Ahead of Time (AoT) para rapida carga de páginas para la distribucón.
@@ -18,36 +18,46 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 ## Estructura de Aplicación
 
 ```console
-src
 ├───app
 │   ├───admin
-│   │   ├───dashboard
-│   │   └───tasking
-│   │       └───todo
+│   │   ├───components
+│   │   │   ├───dashboard
+│   │   │   └───todo
+│   │   ├───guards
+│   │   ├───models
+│   │   ├───services
+│   │   └───store
+│   │       ├───actions
+│   │       ├───effects
+│   │       ├───reducers
+│   │       └───selectors
 │   ├───core
 │   │   ├───guard
 │   │   ├───layout
 │   │   ├───navbar
-│   │   └───services
+│   │   ├───services
+│   │   └───store
+│   │       ├───actions
+│   │       ├───effects
+│   │       └───reducers
 │   ├───public
-│   │   └───login
-│   │       ├───loginForm
-│   │       └───shared
-│   ├───shared
 │   │   ├───components
-│   │   │   └───page-not-found
-│   │   ├───directives
-│   │   └───pipes
-│   └───store
-│       └───tasking
+│   │   │   └───login
+│   │   └───models
+│   └───shared
+│       ├───components
+│       │   └───page-not-found
+│       ├───directives
+│       └───pipes
 ├───assets
 │   ├───fonts
 │   ├───icon
 │   └───images
+│       └───example
 ├───docs
 ├───environments
 ├───meta
-└───scss
+└───scss <- ITCSS Structure
     ├───components
     ├───elements
     ├───generic
@@ -58,6 +68,10 @@ src
 ```
 
 ## Herramientas y modulos usados
+
+- Rxjs: An API for asynchronous programming with observable streams
+
+  http://reactivex.io/rxjs
 
 - Gridlex: Simple. Robust. Responsive. Flexible. Built with Sass.
 
@@ -79,12 +93,19 @@ src
 
   http://typedoc.org
 
+- Awesome Angular: Encuentra más components, pipes, herramients, cursos, etc
+
+  https://github.com/gdi2290/awesome-angular
+
 ## Screenshots
 
+**Formulario de login**
 ![Login Form](/src/assets/images/example/login-form.jpg)
 
+**Home de la App**
 ![Home admin page](/src/assets/images/example/home.jpg)
 
+**Ejample Store App**
 ![Todo page](/src/assets/images/example/todo-interface.jpg)
 
 ## License
