@@ -18,6 +18,34 @@ import {
 
 import './fontawesome';
 
+import {
+  StoreRouterConnectingModule,
+  RouterStateSerializer,
+} from '@ngrx/router-store';
+import { StoreModule, MetaReducer, ActionReducer } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+import { reducers, effects, CustomSerializer, State } from './store';
+
+// not used in production
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { storeLogger } from 'ngrx-store-logger';
+import { localStorageSync } from 'ngrx-store-localstorage';
+import { environment } from 'environments/environment';
+import { keys } from 'ramda';
+
+export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
+  return storeLogger()(reducer);
+}
+
+export function localStorageSyncReducer(reducer: ActionReducer<State>): ActionReducer<State> {
+  return localStorageSync({ keys: keys(reducers).concat(['tasking', 'admin']), rehydrate: true, storage: sessionStorage })(reducer);
+}
+
+export const metaReducers: Array<MetaReducer<any, any>> =
+  environment.production ? [localStorageSyncReducer]
+    : [logger, localStorageSyncReducer];
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +53,13 @@ import './fontawesome';
     SharedModule,
     HttpClientModule,
     CoreRoutingModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot(effects),
+    StoreRouterConnectingModule,
+    environment.production ? [] : StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production // Restrict extension to log-only mode
+    }),
 
     MatButtonModule,
     MatToolbarModule,
@@ -37,6 +72,10 @@ import './fontawesome';
       provide: HTTP_INTERCEPTORS,
       useClass: JwtService,
       multi: true
+    },
+    {
+      provide: RouterStateSerializer,
+      useClass: CustomSerializer
     }
   ],
   declarations: [

@@ -1,23 +1,27 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button [matMenuTriggerFor]="menu" matSufix>
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <span>NgBoilerplate</span>
-  <a mat-button [routerLink]="['admin']">Dashboard</a>
-  <a mat-button [routerLink]="['admin/tasking']">Tasking</a>
+  <mat-toolbar-row>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
 
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item disabled>
-    <mat-icon>perm_identity</mat-icon>
-    <span>Profile</span>
-  </button>
-    <button mat-menu-item disabled>
-    <mat-icon>help_outline</mat-icon>
-    <span>Help</span>
-  </button>
-    <button mat-menu-item  (click)="singOut($event)">
-    <mat-icon>power_settings_new</mat-icon>
-    <span>Sing Up</span>
-  </button>
-  </mat-menu>
+    <span>NgBoilerplate</span>
+    <a mat-button [routerLink]="['admin']">Dashboard</a>
+    <a mat-button [routerLink]="['admin/tasking']">Tasking</a>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item disabled>
+        <mat-icon>perm_identity</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>help_outline</mat-icon>
+        <span>Help</span>
+      </button>
+      <button mat-menu-item (click)="singOut($event)">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Sing Up</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar-row>
 </mat-toolbar>

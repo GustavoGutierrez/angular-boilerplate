@@ -1,22 +1,26 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
-const routes: Routes = [
+// components
+import * as fromComponents from './components';
+
+const ROUTES: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    component: fromComponents.DashboardComponent
   },
 
   {
     path: 'tasking',
-    loadChildren: 'app/admin/tasking/tasking.module#TaskingModule'
+    component: fromComponents.TodoComponent
   }
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(ROUTES)
+  ],
   exports: [RouterModule],
   declarations: []
 })

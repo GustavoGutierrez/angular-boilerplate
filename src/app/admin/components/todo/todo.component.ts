@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import * as tasking from '../../../store/tasking/tasking.actions';
-import { State } from '../../../store';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import * as R from 'ramda';
 import { Observable } from 'rxjs/Observable';
+import * as R from 'ramda';
 
-interface ITodo {
-  id: number;
-  isCompleted?: boolean;
-  title: string;
-}
+import { Todo } from '../../models/todo.model';
+import * as tasking from '../../store/actions';
+import * as fromStore from '../../store';
 
 @Component({
   selector: 'app-todo',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   moduleId: module.id,
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
@@ -25,9 +22,9 @@ export class TodoComponent implements OnInit {
   public todosInCompleteds: number;
   private hasComplete: any = R.has('isCompleted');
 
-  constructor(private store: Store<State>) {
-    this.todos$ = store.pipe(select((state: State) => state.tasking.todos ));
-    this.lastUpdate$ = store.pipe(select((state: State) => state.tasking.lastUpdate));
+  constructor(private store: Store<fromStore.AdminState>) {
+    this.todos$ = store.select(fromStore.geTaskingState);
+    this.lastUpdate$ = store.select(fromStore.getLastUpdateState);
   }
 
   ngOnInit(): void {
@@ -35,7 +32,7 @@ export class TodoComponent implements OnInit {
       this.todosCompleteds = 0;
       this.todosInCompleteds = 0;
 
-      todos.forEach((todo: ITodo) => {
+      todos.forEach((todo: Todo) => {
         if (!todo.isCompleted || !this.hasComplete(todo)) {
           this.todosCompleteds++;
         } else {
@@ -45,23 +42,23 @@ export class TodoComponent implements OnInit {
     });
   }
 
-  addTodo(input) {
+  addTodo(input: HTMLInputElement) {
     if (!input.value) {
       return;
     }
-    this.store.dispatch(new tasking.AddTodoAction(input.value));
+    this.store.dispatch(new tasking.AddTodo(input.value));
     input.value = '';
   }
 
-  toggleTodo(todo) {
-   this.store.dispatch(new tasking.ToggleTodoAction(todo.id));
+  toggleTodo(todo: Todo) {
+   this.store.dispatch(new tasking.ToggleTodo(todo.id));
   }
 
-  removeTodo(todo) {
-    this.store.dispatch(new tasking.RemoveTodoAction(todo.id));
+  removeTodo(todo: Todo) {
+    this.store.dispatch(new tasking.RemoveTodo(todo.id));
   }
 
-  onEnter(input) {
+  onEnter(input: HTMLInputElement) {
     this.addTodo(input);
   }
 

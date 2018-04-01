@@ -1,20 +1,20 @@
 import { Action } from '@ngrx/store';
 import { tassign } from 'tassign';
-import { TaskingActionTypes, TaskingActions } from './tasking.actions';
+import * as taskingActions from '../actions';
 
-export interface ITaskingState {
+export interface TaskingState {
   todos: any[];
   lastUpdate: Date;
 }
 
-export const TASKING_INITIAL_STATE: ITaskingState = {
+export const TASKING_INITIAL_STATE: TaskingState = {
   todos: [],
   lastUpdate: null,
 }
 
 class TodoActions {
 
-  constructor(private state: ITaskingState, private action: TaskingActions) { }
+  constructor(private state: TaskingState, private action: taskingActions.TaskingActions) { }
 
   addTodo() {
     const payload = this.action.payload;
@@ -27,7 +27,7 @@ class TodoActions {
   }
 
   toggleTodo() {
-    const todo = this.state.todos.find(t => t.id === this.action.payload);
+    const todo = this.state.todos.find((t: any) => t.id === this.action.payload);
     const index = this.state.todos.indexOf(todo);
     return tassign(this.state, {
       todos: [
@@ -55,24 +55,24 @@ class TodoActions {
 
 }
 
-export function taskingReducer(state: ITaskingState = TASKING_INITIAL_STATE, action: TaskingActions): ITaskingState {
+export function taskingReducer(state: TaskingState = TASKING_INITIAL_STATE, action: taskingActions.TaskingActions): TaskingState {
 
   const todoActions: TodoActions = new TodoActions(state, action);
 
   switch (action.type) {
-    case TaskingActionTypes.add: {
+    case taskingActions.ADD_TODO: {
       return todoActions.addTodo();
     }
 
-    case TaskingActionTypes.toggle: {
+    case taskingActions.TOGGLE_TODO: {
       return todoActions.toggleTodo();
     }
 
-    case TaskingActionTypes.remove: {
+    case taskingActions.REMOVE_TODO: {
       return todoActions.removeTodo();
     }
 
-    case TaskingActionTypes.clear: {
+    case taskingActions.CLEAR_TODO: {
       return todoActions.clearTodos();
     }
 
