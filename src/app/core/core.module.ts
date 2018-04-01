@@ -7,7 +7,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import { JwtService } from './services/Jwt.service';
+
 import {
   MatButtonModule,
   MatToolbarModule,
@@ -25,14 +25,16 @@ import {
 import { StoreModule, MetaReducer, ActionReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { reducers, effects, CustomSerializer, State } from './store';
 
-// not used in production
+
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeLogger } from 'ngrx-store-logger';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { environment } from 'environments/environment';
 import { keys } from 'ramda';
+
+import { JwtService } from './services';
+import { reducers, effects, CustomSerializer, State } from './store';
 
 export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
   return storeLogger()(reducer);

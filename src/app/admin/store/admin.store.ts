@@ -12,6 +12,6 @@ import { reducers } from './reducers';
     EffectsModule.forFeature(effects)
   ]
 })
-export class AppStoreModule {
+export class AdminStoreModule {
   constructor() { }
 }

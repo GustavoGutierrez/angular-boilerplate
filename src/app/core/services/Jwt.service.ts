@@ -16,7 +16,6 @@ import { Observable } from 'rxjs/Observable';
  */
 @Injectable()
 export class JwtService implements HttpInterceptor {
-
   /**
    * Método ejecutado con cada petición Http
    * @param req HttpRequest
@@ -24,10 +23,10 @@ export class JwtService implements HttpInterceptor {
    * @return Observable<HttpSentEvent | HttpHeaderResponse | HttpProgressEvent | HttpResponse<any> | HttpUserEvent<any>>
    */
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpSentEvent |
-  HttpHeaderResponse |
-  HttpProgressEvent |
-  HttpResponse<any> |
-  HttpUserEvent<any>> {
+    HttpHeaderResponse |
+    HttpProgressEvent |
+    HttpResponse<any> |
+    HttpUserEvent<any>> {
     // build the headers you want
     const headers = {
       'Authorization': `Bearer secretJWTToken`
@@ -35,7 +34,7 @@ export class JwtService implements HttpInterceptor {
 
     // clone the request
     const clone = req.clone({ setHeaders: headers });
-    console.log('interceptor....')
+    console.log('interceptor....');
 
     // pass it to the next interceptor
     return next.handle(clone);

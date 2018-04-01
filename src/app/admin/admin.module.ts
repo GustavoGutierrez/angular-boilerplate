@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
-import { AppStoreModule } from './store';
+import { AdminStoreModule } from './store';
 
 // services
 import * as fromServices from './services';
@@ -23,7 +23,7 @@ import {
   imports: [
     CommonModule,
     AdminRoutingModule,
-    AppStoreModule,
+    AdminStoreModule,
 
     MatInputModule,
     MatButtonModule,
