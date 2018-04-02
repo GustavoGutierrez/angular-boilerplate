@@ -9,6 +9,9 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 
 - Buenas practicas en la organización de archivos de la aplicación Angular.
 - Compilación Ahead of Time (AoT) para rapida carga de páginas para la distribucón.
+- Generadores de documentación automatica para el código typescript y sass
+- Uso e implementación de @ngrx/effects
+- Uso de selectors y features
 - Pruebas de codigo Angular con Jasmine y Karma.
 - Pruebas de covertura con Istanbul y Karma
 - End-to-end de codigo Angular usando Protractor.
