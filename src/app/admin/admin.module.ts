@@ -1,40 +1,59 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AdminRoutingModule } from './admin-routing.module';
-import { AdminStoreModule } from './store';
-
-// services
-import * as fromServices from './services';
-
-// components
-import * as fromComponents from './components';
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import {
-  MatInputModule,
   MatButtonModule,
   MatIconModule,
-  MatCheckboxModule,
   MatListModule,
   MatCardModule,
-  MAT_LABEL_GLOBAL_OPTIONS,
-} from '@angular/material';
+  MatInputModule,
+  MatCheckboxModule,
+  MatSelectModule,
+  MatFormFieldModule
+} from "@angular/material";
+
+// Routing by admin
+import { AdminRoutingModule } from "./admin-routing.module";
+
+// Store by admin
+import { AdminStoreModule } from "./store";
+
+// services
+import * as fromServices from "./services";
+
+// components
+import * as fromComponents from "./components";
+
+// Shared resoruces
+import { SharedModule } from "../shared";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     AdminRoutingModule,
     AdminStoreModule,
+    SharedModule,
 
-    MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatCheckboxModule,
     MatListModule,
     MatCardModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
-  providers: [...fromServices.services],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: fromServices.InterceptorService,
+      multi: true
+    },
+    ...fromServices.services
+  ],
   declarations: [...fromComponents.components],
   exports: [...fromComponents.components]
-
 })
-export class AdminModule { }
+export class AdminModule {}

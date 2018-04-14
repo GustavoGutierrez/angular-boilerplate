@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { JwtService } from './Jwt.service';
+import { InterceptorService } from './interceptor.service';
 
-describe('Service: Jwt', () => {
+describe('Service: Interceptor', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [JwtService]
+      providers: [InterceptorService]
     });
   });
 
-  it('should ...', inject([JwtService], (service: JwtService) => {
+  it('should ...', inject([InterceptorService], (service: InterceptorService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Todo } from '../models/todo.model';
-import { RestService } from './rest.service';
+import { BaseService } from './base.service';
 
 @Injectable()
-export class TodoService extends RestService {
+export class TodoService extends BaseService {
   /**
    * Relative base current api
    */

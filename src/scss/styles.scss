@@ -25,6 +25,7 @@
 // La capa de componentes es donde comenzamos a diseñar piezas reconocibles de interfaz de usuario.
 // No deberíamos encontrar selectores con una especificidad inferior a una clase en esta capa.
   @import "components/buttons";
+  @import "components/validators";
 
 // TRUMPS
 // Esta capa supera a todas las demás capas y tiene el poder de anular cualquier cosa que haya pasado antes.

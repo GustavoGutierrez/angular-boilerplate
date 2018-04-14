@@ -1,0 +1,16 @@
+////
+/// Css de maquetación de elementos de validación de formulario, mensajes de error, etc
+/// @group COMPONENTS
+/// @author Gustavo Gutierrez
+////
+
+/// Lista de mensajes de validación de errores
+/// `@group COMPONENTS` and `@author Gustavo Gutierrez`
+.validation-errors {
+  position: absolute;
+  top: 34px;
+  mat-hint.error-msg {
+    color: #f44336;
+    font-size: 0.7em;
+  }
+}

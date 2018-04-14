@@ -4,21 +4,6 @@
 /// @group GENERIC
 /// @author Gustavo Gutierrez
 ////
-
-/// This item will have:
-/// `@group API` and `@author Gustavo Gutierrez`
-/// inherited from the poster.
-@function dummy-function() {
-  // ...
-}
-
-/// This item overrides the `@author` annotation
-/// from the poster; it's not merged with it.
-/// @author Gustavo Gutierrez
-@mixin dummy-mixin {
-  // ...
-}
-
 body {
   margin: 0;
 }

@@ -15,7 +15,7 @@ import { Observable } from 'rxjs/Observable';
  * Servicio interceptor de peticiones http, este servicio intercepta todas las peticiones realizadas y le agrega la autorización
  */
 @Injectable()
-export class JwtService implements HttpInterceptor {
+export class InterceptorService implements HttpInterceptor {
   /**
    * Método ejecutado con cada petición Http
    * @param req HttpRequest
