@@ -1,7 +1,6 @@
 # ANGULAR BOILERPLATE
 
-Proyecto base para iniciar cualquier proyecto con Angular >= 5.2.9 usando ngrx para manejar el estado y flujo de los datos de la aplicación manteniendo un estándar en la organización del código e implementa las mejores prácticas actuales de Javascript haciendo uso de immutables, programación funcional.
-Con el uso de librerías como: [Ramda](http://ramdajs.com), [Immutable](https://facebook.github.io/immutable-js/), [Tassign](https://www.npmjs.com/package/tassign), etc.
+Proyecto base para iniciar cualquier proyecto con Angular >= 5.2.9 usando ngrx/store para manejar el estado y flujo de los datos de la aplicación manteniendo un estándar en la organización del código e implementa las mejores prácticas actuales de Javascript haciendo uso de immutables, programación funcional. Con el uso de librerías como: [Ramda](http://ramdajs.com), [Immutable](https://facebook.github.io/immutable-js/), [Tassign](https://www.npmjs.com/package/tassign), etc.
 
 Este proyecto ofrece una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo. proponiendo el uso de la immutabilidad con la programación funcional para hacer a nuestros proyectos fácilmente escalables y predecible tanto en Javascript como en CSS; En css se implementa una arquitectura escalable y mantenible con el uso de de ITCSS [http://itcss.io](http://itcss.io/).
 
@@ -21,60 +20,62 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 ## Estructura de Aplicación
 
 ```console
-src
-├── app
-│   ├── admin
-│   │   ├── components
-│   │   │   ├── dashboard
-│   │   │   └── todo
-│   │   ├── guards
-│   │   ├── interceptors
-│   │   ├── models
-│   │   ├── services
-│   │   └── store
-│   │       ├── actions
-│   │       ├── effects
-│   │       ├── reducers
-│   │       └── selectors
-│   ├── core
-│   │   ├── components
-│   │   │   ├── layout
-│   │   │   ├── navbar
-│   │   │   └── page-not-found
-│   │   ├── guard
-│   │   ├── services
-│   │   ├── store
-│   │   │   ├── actions
-│   │   │   ├── effects
-│   │   │   └── reducers
-│   │   └── utils
-│   ├── public
-│   │   ├── components
-│   │   │   └── login
-│   │   ├── models
-│   │   └── services
-│   └── shared
-│       ├── components
-│       │   └── show-errors
-│       ├── directives
-│       ├── pipes
-│       └── validators
-├── assets
-│   ├── fonts
-│   ├── icon
-│   └── images
-│       └── example
-├── docs
-├── environments
-├── meta
-└── scss <- Metodología ITCSS
-    ├── components
-    ├── elements
-    ├── generic
-    ├── objects
-    ├── settings
-    ├── tools
-    └── trumps
+├── e2e
+├── nginx
+└── src
+    ├── app
+    │   ├── admin
+    │   │   ├── components
+    │   │   │   ├── dashboard
+    │   │   │   └── todo
+    │   │   ├── guards
+    │   │   ├── interceptors
+    │   │   ├── models
+    │   │   ├── services
+    │   │   └── store
+    │   │       ├── actions
+    │   │       ├── effects
+    │   │       ├── reducers
+    │   │       └── selectors
+    │   ├── core
+    │   │   ├── components
+    │   │   │   ├── layout
+    │   │   │   ├── navbar
+    │   │   │   └── page-not-found
+    │   │   ├── guard
+    │   │   ├── services
+    │   │   ├── store
+    │   │   │   ├── actions
+    │   │   │   ├── effects
+    │   │   │   └── reducers
+    │   │   └── utils
+    │   ├── public
+    │   │   ├── components
+    │   │   │   └── login
+    │   │   ├── models
+    │   │   └── services
+    │   └── shared
+    │       ├── components
+    │       │   └── show-errors
+    │       ├── directives
+    │       ├── pipes
+    │       └── validators
+    ├── assets
+    │   ├── fonts
+    │   ├── icon
+    │   └── images
+    │       └── example
+    ├── docs
+    ├── environments
+    ├── meta
+    └── scss <- Metodología ITCSS
+        ├── components
+        ├── elements
+        ├── generic
+        ├── objects
+        ├── settings
+        ├── tools
+        └── trumps
 ```
 
 ## Herramientas y modulos usados
