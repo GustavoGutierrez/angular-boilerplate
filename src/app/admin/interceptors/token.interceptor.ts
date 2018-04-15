@@ -7,15 +7,17 @@ import {
   HttpHeaderResponse,
   HttpProgressEvent,
   HttpResponse,
-  HttpUserEvent
+  HttpUserEvent,
+  HttpEvent,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-
+import 'rxjs/add/operator/do';
 /**
  * Servicio interceptor de peticiones http, este servicio intercepta todas las peticiones realizadas y le agrega la autorización
  */
 @Injectable()
-export class InterceptorService implements HttpInterceptor {
+export class TokenInterceptor implements HttpInterceptor {
   /**
    * Método ejecutado con cada petición Http
    * @param req HttpRequest
@@ -34,10 +36,19 @@ export class InterceptorService implements HttpInterceptor {
 
     // clone the request
     const clone = req.clone({ setHeaders: headers });
-    console.log('interceptor....');
 
     // pass it to the next interceptor
-    return next.handle(clone);
+    return next.handle(clone).do((event: HttpEvent<any>) => {
+      if (event instanceof HttpResponse) {
+        // do stuff with response if you want
+      }
+    }, (err: any) => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401 || err.status === 403) {
+          window.location.href = location.protocol + '//' + location.host;
+        }
+      }
+    });
   }
 
 }

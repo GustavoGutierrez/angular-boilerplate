@@ -22,53 +22,59 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 
 ```console
 src
-├───app
-│   ├───admin
-│   │   ├───components
-│   │   │   ├───dashboard
-│   │   │   └───todo
-│   │   ├───guards
-│   │   ├───models
-│   │   ├───services
-│   │   └───store
-│   │       ├───actions
-│   │       ├───effects
-│   │       ├───reducers
-│   │       └───selectors
-│   ├───core
-│   │   ├───guard
-│   │   ├───layout
-│   │   ├───navbar
-│   │   ├───services
-│   │   └───store
-│   │       ├───actions
-│   │       ├───effects
-│   │       └───reducers
-│   ├───public
-│   │   ├───components
-│   │   │   └───login
-│   │   └───models
-│   └───shared
-│       ├───components
-│       │   └───page-not-found
-│       ├───directives
-│       └───pipes
-├───assets
-│   ├───fonts
-│   ├───icon
-│   └───images
-│       └───example
-├───docs
-├───environments
-├───meta
-└───scss <- ITCSS Structure
-    ├───components
-    ├───elements
-    ├───generic
-    ├───objects
-    ├───settings
-    ├───tools
-    └───trumps
+├── app
+│   ├── admin
+│   │   ├── components
+│   │   │   ├── dashboard
+│   │   │   └── todo
+│   │   ├── guards
+│   │   ├── interceptors
+│   │   ├── models
+│   │   ├── services
+│   │   └── store
+│   │       ├── actions
+│   │       ├── effects
+│   │       ├── reducers
+│   │       └── selectors
+│   ├── core
+│   │   ├── components
+│   │   │   ├── layout
+│   │   │   ├── navbar
+│   │   │   └── page-not-found
+│   │   ├── guard
+│   │   ├── services
+│   │   ├── store
+│   │   │   ├── actions
+│   │   │   ├── effects
+│   │   │   └── reducers
+│   │   └── utils
+│   ├── public
+│   │   ├── components
+│   │   │   └── login
+│   │   ├── models
+│   │   └── services
+│   └── shared
+│       ├── components
+│       │   └── show-errors
+│       ├── directives
+│       ├── pipes
+│       └── validators
+├── assets
+│   ├── fonts
+│   ├── icon
+│   └── images
+│       └── example
+├── docs
+├── environments
+├── meta
+└── scss <- Metodología ITCSS
+    ├── components
+    ├── elements
+    ├── generic
+    ├── objects
+    ├── settings
+    ├── tools
+    └── trumps
 ```
 
 ## Herramientas y modulos usados

@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Todo } from '../../models/todo.model';
+import { Task } from '../../models/task.model';
 
 // add todo
 export const ADD_TODO = '[Tasking] Add Todo';
@@ -18,7 +18,7 @@ export class AddTodoFail implements Action {
 
 export class AddTodoSuccess implements Action {
   readonly type = ADD_TODO_SUCCESS;
-  constructor(public payload: Todo) {}
+  constructor(public payload: Task) {}
 }
 
 // remove todo
@@ -38,7 +38,7 @@ export class RemoveTodoFail implements Action {
 
 export class RemoveTodoSuccess implements Action {
   readonly type = REMOVE_TODO_SUCCESS;
-  constructor(public payload: Todo) {}
+  constructor(public payload: Task) {}
 }
 
 // clear todo

@@ -13,7 +13,8 @@
     "start-doc:sass": "http-server doc/scss -p 8000 -c-1 --cors",
     "start-doc:js": "http-server doc/js -p 8000 -c-1 --cors",
     "start:coverage": "http-server -c-1 -o -p 9875 ./coverage",
-    "test": "ng test --code-coverage",
+    "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ci": "yarn lint && yarn test && yarn build:prod"

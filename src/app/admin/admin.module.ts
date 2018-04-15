@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import {
   MatButtonModule,
@@ -24,9 +25,11 @@ import * as fromServices from "./services";
 // components
 import * as fromComponents from "./components";
 
+// interceptors
+import * as fromInterceptors from "./interceptors";
+
 // Shared resoruces
 import { SharedModule } from "../shared";
-import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -48,7 +51,12 @@ import { ReactiveFormsModule } from "@angular/forms";
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: fromServices.InterceptorService,
+      useClass: fromInterceptors.TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: fromInterceptors.TimingInterceptor,
       multi: true
     },
     ...fromServices.services

@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, SkipSelf, Optional } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -7,7 +7,8 @@ import {
   MatToolbarModule,
   MatMenuModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatFormFieldModule
 } from "@angular/material";
 
 import { CoreRoutingModule } from "./core-routing.module";
@@ -16,6 +17,7 @@ import * as fromComponents from "./components";
 import { SharedModule } from "../shared/shared.module";
 
 import "./utils/fontawesome";
+import { throwIfAlreadyLoaded } from "./module-import-guard";
 
 @NgModule({
   imports: [
@@ -29,7 +31,8 @@ import "./utils/fontawesome";
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatFormFieldModule
   ],
   providers: [
 
@@ -37,4 +40,8 @@ import "./utils/fontawesome";
   declarations: [...fromComponents.components],
   exports: [...fromComponents.components]
 })
-export class CoreModule {}
+export class CoreModule {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+  }
+}

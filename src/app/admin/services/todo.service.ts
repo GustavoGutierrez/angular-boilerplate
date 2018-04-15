@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Todo } from '../models/todo.model';
+import { Task } from '../models/task.model';
 import { BaseService } from './base.service';
 
 @Injectable()
@@ -19,15 +19,15 @@ export class TodoService extends BaseService {
     return this.get(this.relativeUrl);
   }
 
-  public create(todo: Todo) {
+  public create(todo: Task) {
     return this.post(this.relativeUrl, todo);
   }
 
-  public read(id: number): Observable<Todo> {
+  public read(id: number): Observable<Task> {
     return this.get(`${this.relativeUrl}${id.toString()}`);
   }
 
-  public update(todo: Todo) {
+  public update(todo: Task) {
     return this.put(this.relativeUrl, todo);
   }
 

@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as R from 'ramda';
 
-import { Todo } from '../../models/todo.model';
+import { Task } from '../../models/task.model';
 import * as tasking from '../../store/actions';
 import * as fromStore from '../../store';
 
@@ -32,7 +32,7 @@ export class TodoComponent implements OnInit {
       this.todosCompleteds = 0;
       this.todosInCompleteds = 0;
 
-      todos.forEach((todo: Todo) => {
+      todos.forEach((todo: Task) => {
         if (!todo.isCompleted || !this.hasComplete(todo)) {
           this.todosCompleteds++;
         } else {
@@ -50,11 +50,11 @@ export class TodoComponent implements OnInit {
     input.value = '';
   }
 
-  toggleTodo(todo: Todo) {
+  toggleTodo(todo: Task) {
    this.store.dispatch(new tasking.ToggleTodo(todo.id));
   }
 
-  removeTodo(todo: Todo) {
+  removeTodo(todo: Task) {
     this.store.dispatch(new tasking.RemoveTodo(todo.id));
   }
 

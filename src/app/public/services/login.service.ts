@@ -4,7 +4,7 @@ import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class LoginService {
-  private baseUrl: string = environment.API_URL;
+  public baseUrl: string = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
