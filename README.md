@@ -6,15 +6,17 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 
 ## Características
 
-- Buenas practicas en la organización de archivos de la aplicación Angular.
+- [Buenas practicas](https://angular.io/guide/styleguide) en la organización de archivos de la aplicación Angular.
 - Compilación Ahead of Time (AoT) para rapida carga de páginas para la distribucón.
 - Generadores de documentación automatica para el código typescript y sass
+- Lazy loading modules
+- Responsive layout con con Gridlex
+- Angular Pipes
 - Uso e implementación de @ngrx/effects
 - Uso de selectors y features
-- Pruebas de codigo Angular con Jasmine y Karma.
+- Pruebas unitarias con Jasmine y Karma incluyendo covertura de código.
 - Pruebas de covertura con Istanbul y Karma
 - End-to-end de codigo Angular usando Protractor.
-- Administración de tipado usando @types
 - Soporte de Angular 5.2.9 y control de cambios usando package.json y cualquier nueva caracteristica de versiones de Angular.
 
 ## Estructura de Aplicación
