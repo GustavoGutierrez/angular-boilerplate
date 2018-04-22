@@ -4,23 +4,39 @@
       <img id="profile-img" class="card-login-logo" src="/assets/images/avatar_2x.png" />
     </mat-card-title>
     <mat-card-content>
-      <form class="grid form-signin">
+      <form novalidate (ngSubmit)="signin(loginForm)" [formGroup]="loginForm" class="grid form-signin">
         <mat-form-field class="col-12">
           <span matPrefix>
             <mat-icon>email</mat-icon> &nbsp;</span>
-          <input #email matInput placeholder="Email address" required>
+          <input formControlName="email" matInput placeholder="Email address" required autocomplete="off">
+          <mat-error id="email-invalid" *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required') && loginForm.get('email').touched" align="start" class="error">
+            Please enter the correct email, this email not valid.
+          </mat-error>
+          <mat-error id="email-req" *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched" align="start" class="error">
+            Email is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="col-12">
-          <span matPrefix><mat-icon>vpn_key</mat-icon> &nbsp;</span>
-          <input #password matInput type="password" placeholder="Password" required>
+          <span matPrefix>
+            <mat-icon>vpn_key</mat-icon> &nbsp;</span>
+          <input formControlName="password" matInput type="password" placeholder="Password" required autocomplete="new-password">
+          <mat-error *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched" align="start" class="error">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched" align="start" class="error">
+            Password is minimum of 3 characters
+          </mat-error>
         </mat-form-field>
-
-        <div id="remember" class="col-12">
+        <!-- <div id="remember" class="col-12">
           <mat-checkbox [checked]="true" color="primary">Remember me</mat-checkbox>
-        </div>
+        </div>-->
 
-        <button (click)="signin()" type="submit" mat-raised-button color="primary"><mat-icon>account_circle</mat-icon> Sign in</button>
+        <!--<mat-error *ngIf="globalError?.status == 401" class="error general">
+          Invalid email or password, please try again.
+        </mat-error>-->
+
+        <button type="submit" [disabled]="loginForm.invalid" mat-raised-button color="primary" class="middle contrast">Login</button>
       </form>
       <div class="grid-center">
         <a href="#" mat-button color="primary" class="forgot-password">Forgot the password?</a>

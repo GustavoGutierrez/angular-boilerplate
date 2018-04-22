@@ -11,13 +11,32 @@ import {
   HttpEvent,
   HttpErrorResponse
 } from '@angular/common/http';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
+
+import * as publicActions from '../../public/store/actions';
+import * as fromPublicStore from '../../public/store';
+import * as fromSelectors from '../../public/store/selectors';
+import * as R from 'ramda';
 /**
- * Servicio interceptor de peticiones http, este servicio intercepta todas las peticiones realizadas y le agrega la autorización
+ * Servicio interceptor de peticiones http, este servicio intercepta todas las peticiones realizadas
+ * y le agrega la autorización
  */
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
+
+  private token$: Observable<string>;
+  private authorization: string = '';
+
+  constructor(
+    private storePublic: Store<fromPublicStore.PublicState>,
+  ) {
+    this.token$ = storePublic.select(fromSelectors.getTokenState);
+    this.token$.subscribe(token => {
+      this.authorization = token;
+    });
+  }
   /**
    * Método ejecutado con cada petición Http
    * @param req HttpRequest
@@ -31,7 +50,7 @@ export class TokenInterceptor implements HttpInterceptor {
     HttpUserEvent<any>> {
     // build the headers you want
     const headers = {
-      'Authorization': `Bearer secretJWTToken`
+      'Authorization': `Bearer ${this.authorization}`
     };
 
     // clone the request
@@ -45,7 +64,7 @@ export class TokenInterceptor implements HttpInterceptor {
     }, (err: any) => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401 || err.status === 403) {
-          window.location.href = location.protocol + '//' + location.host;
+         window.location.href = location.protocol + '//' + location.host;
         }
       }
     });

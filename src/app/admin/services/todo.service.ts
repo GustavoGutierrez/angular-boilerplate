@@ -9,7 +9,7 @@ export class TodoService extends BaseService {
   /**
    * Relative base current api
    */
-  private relativeUrl = '/todos/';
+  private relativeUrl = 'tasks';
 
   constructor(private _http: HttpClient) {
     super(_http);
@@ -20,7 +20,17 @@ export class TodoService extends BaseService {
   }
 
   public create(todo: Task) {
-    return this.post(this.relativeUrl, todo);
+    const data = {
+      "fields": {
+          "title": {
+              "stringValue": todo.title
+          },
+          "isCompleted": {
+              "booleanValue": false
+          }
+      }
+  }
+    return this.post(this.relativeUrl, data);
   }
 
   public read(id: number): Observable<Task> {
@@ -35,3 +45,4 @@ export class TodoService extends BaseService {
     return this.del(`${this.relativeUrl}${id.toString()}`);
   }
 }
+

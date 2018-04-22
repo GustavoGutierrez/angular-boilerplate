@@ -8,7 +8,6 @@ import {
   MatMenuModule,
   MatIconModule,
   MatSidenavModule,
-  MatFormFieldModule
 } from "@angular/material";
 
 import { CoreRoutingModule } from "./core-routing.module";
@@ -31,8 +30,7 @@ import { throwIfAlreadyLoaded } from "./module-import-guard";
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
-    MatSidenavModule,
-    MatFormFieldModule
+    MatSidenavModule
   ],
   providers: [
 

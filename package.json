@@ -6,7 +6,7 @@
   "homepage": "http://gustavogutierrez.co",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --env=dev",
     "build:prod": "ng build --prod --aot",
     "build-doc:sass": "sassdoc src/scss/ --dest ./doc/scss --theme default",
     "build-doc:js": "typedoc --out doc/js --options typedoc.json --exclude 'node_modules' --exclude '**/*.spec.ts' ./src/",

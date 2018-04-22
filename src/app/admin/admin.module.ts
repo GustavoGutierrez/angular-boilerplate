@@ -10,7 +10,7 @@ import {
   MatInputModule,
   MatCheckboxModule,
   MatSelectModule,
-  MatFormFieldModule
+  //MatFormFieldModule
 } from "@angular/material";
 
 // Routing by admin
@@ -23,20 +23,25 @@ import { AdminStoreModule } from "./store";
 import * as fromServices from "./services";
 
 // components
-import * as fromComponents from "./components";
+//import * as fromComponents from "./components";
+
+// components
+import * as fromContainers from "./containers";
 
 // interceptors
 import * as fromInterceptors from "./interceptors";
 
 // Shared resoruces
 import { SharedModule } from "../shared";
-
+import { PublicStoreModule } from "../public/store";
+import * as fromPublicServices from "../public/services";
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     AdminRoutingModule,
     AdminStoreModule,
+    PublicStoreModule,
     SharedModule,
 
     MatButtonModule,
@@ -45,8 +50,7 @@ import { SharedModule } from "../shared";
     MatCardModule,
     MatInputModule,
     MatCheckboxModule,
-    MatSelectModule,
-    MatFormFieldModule
+    MatSelectModule
   ],
   providers: [
     {
@@ -59,9 +63,10 @@ import { SharedModule } from "../shared";
       useClass: fromInterceptors.TimingInterceptor,
       multi: true
     },
-    ...fromServices.services
+    ...fromServices.services,
+    ...fromPublicServices.services
   ],
-  declarations: [...fromComponents.components],
-  exports: [...fromComponents.components]
+  declarations: [...fromContainers.containers],
+  exports: []
 })
 export class AdminModule {}

@@ -20,7 +20,7 @@ export function localStorageSyncReducer(
   reducer: ActionReducer<State>
 ): ActionReducer<State> {
   return localStorageSync({
-    keys: keys(reducers).concat(["tasking", "admin"]),
+    keys: keys(reducers).concat(["public", "admin"]),
     rehydrate: true,
     storage: sessionStorage
   })(reducer);

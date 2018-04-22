@@ -6,6 +6,8 @@
 export const environment = {
   production: false,
 
-  API_URL: 'https://jsonplaceholder.typicode.com',
-  LOCALSTORAGE_AUTH: 'authentication'
+  API_URL: '',
+
+  API_LOGIN: '',
+
 };

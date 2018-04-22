@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from '../shared'
+import { SharedModule } from '../shared';
+import { PublicStoreModule } from './store';
 import { PublicRoutingModule } from './public-routing.module';
 import * as fromComponents from './components';
 import * as fromServices from './services';
@@ -13,14 +14,14 @@ import {
   MatCheckboxModule,
   MatIconModule,
   MatCardModule,
-  MatInputModule
+  MatInputModule,
 } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     PublicRoutingModule,
     SharedModule,
@@ -28,7 +29,9 @@ import {
     MatCheckboxModule,
     MatIconModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+
+    PublicStoreModule
   ],
   providers: [...fromServices.services],
   declarations: [
