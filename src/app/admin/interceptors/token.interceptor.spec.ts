@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { TokenToReqInterceptor } from './tokenToReq.interceptor';
+import { TokenInterceptor } from './token.interceptor';
 
 describe('Service: Interceptor', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TokenToReqInterceptor]
+      providers: [TokenInterceptor]
     });
   });
 
-  it('should ...', inject([TokenToReqInterceptor], (service: TokenToReqInterceptor) => {
+  it('should ...', inject([TokenInterceptor], (service: TokenInterceptor) => {
     expect(service).toBeTruthy();
   }));
 });

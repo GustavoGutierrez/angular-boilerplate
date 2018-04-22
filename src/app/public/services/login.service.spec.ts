@@ -1,5 +1,3 @@
-/* tslint:disable:no-unused-variable */
-
 import { TestBed, async, inject, getTestBed } from '@angular/core/testing';
 import { LoginService } from './login.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
@@ -28,13 +26,8 @@ describe('Service: Login', () => {
       const dummyResponse = { username: 'john', firstname: 'John', lastname: 'Doe' };
 
       service.signin('john.doe@test.com', '123456').subscribe(login => {
-       // expect(users.length).toBe(2);
         expect(login).toEqual(dummyResponse);
       });
-
-     /* const req = httpMock.expectOne(`${service.baseUrl}/login`);
-      expect(req.request.method).toBe("POST");
-      req.flush(dummyResponse);*/
     });
   });
 });
