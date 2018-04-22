@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components';
+import * as fromContainers from './containers';
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: fromContainers.LayoutComponent,
+    children:[
+      {
+        path: '',
+        component: fromContainers.LoginComponent
+      }
+    ]
   }
 ];
 

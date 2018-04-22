@@ -10,7 +10,9 @@ import {
   MatInputModule,
   MatCheckboxModule,
   MatSelectModule,
-  //MatFormFieldModule
+  MatToolbarModule,
+  MatMenuModule,
+  MatSidenavModule
 } from "@angular/material";
 
 // Routing by admin
@@ -23,9 +25,9 @@ import { AdminStoreModule } from "./store";
 import * as fromServices from "./services";
 
 // components
-//import * as fromComponents from "./components";
+import * as fromComponents from "./components";
 
-// components
+// containers - pages and layout
 import * as fromContainers from "./containers";
 
 // interceptors
@@ -50,7 +52,10 @@ import * as fromPublicServices from "../public/services";
     MatCardModule,
     MatInputModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule
   ],
   providers: [
     {
@@ -66,7 +71,10 @@ import * as fromPublicServices from "../public/services";
     ...fromServices.services,
     ...fromPublicServices.services
   ],
-  declarations: [...fromContainers.containers],
+  declarations: [
+    ...fromContainers.containers,
+    ...fromComponents.components
+  ],
   exports: []
 })
 export class AdminModule {}

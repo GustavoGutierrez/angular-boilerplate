@@ -1,7 +1,9 @@
+import { LayoutComponent } from './layout/layout.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {TodoComponent} from './todo/todo.component';
+import {TaskComponent} from './task/task.component';
 
-export const containers: any[] = [DashboardComponent, TodoComponent];
+export const containers: any[] = [LayoutComponent, DashboardComponent, TaskComponent];
 
+export * from './layout/layout.component';
 export * from './dashboard/dashboard.component';
-export * from './todo/todo.component';
+export * from './task/task.component';

@@ -1,28 +1,31 @@
-import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from "@angular/core";
 
 // Containers
-import * as fromContainers from './containers';
+import * as fromContainers from "./containers";
 
 const ROUTES: Routes = [
   {
-    path: '',
-    component: fromContainers.DashboardComponent
-  },
+    path: "",
+    component: fromContainers.LayoutComponent,
+    children: [
+      {
+        path: "",
+        pathMatch: 'full',
+        component: fromContainers.DashboardComponent
+      },
 
-  {
-    path: 'tasking',
-    component: fromContainers.TodoComponent
+      {
+        path: "tasking",
+        component: fromContainers.TaskComponent
+      }
+    ]
   }
 ];
 
-
 @NgModule({
-  imports: [
-    RouterModule.forChild(ROUTES)
-  ],
+  imports: [RouterModule.forChild(ROUTES)],
   exports: [RouterModule],
   declarations: []
 })
-export class AdminRoutingModule { }
-
+export class AdminRoutingModule {}

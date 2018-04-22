@@ -8,13 +8,13 @@ import * as tasking from '../../store/actions';
 import * as fromStore from '../../store';
 
 @Component({
-  selector: 'app-todo',
+  selector: 'app-task',
   changeDetection: ChangeDetectionStrategy.OnPush,
   moduleId: module.id,
-  templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.scss']
+  templateUrl: './task.component.html',
+  styleUrls: ['./task.component.scss']
 })
-export class TodoComponent implements OnInit {
+export class TaskComponent implements OnInit {
 
   public todos$: Observable<any>;
   public lastUpdate$: Observable<Date>;

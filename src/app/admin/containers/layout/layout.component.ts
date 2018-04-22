@@ -8,10 +8,20 @@ import { Router, UrlTree } from '@angular/router';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  public isLoggedIn = false;
+  public showFiller = false;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+
+  isActiveRoute(route: string) {
+    const tree: UrlTree = this.router.parseUrl(route);
+    const treeCurrent: UrlTree = this.router.parseUrl(this.router.url);
+
+    return this.router.serializeUrl(tree) === this.router.serializeUrl(treeCurrent);
   }
 
 }

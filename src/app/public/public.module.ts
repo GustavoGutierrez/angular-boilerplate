@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared';
 import { PublicStoreModule } from './store';
 import { PublicRoutingModule } from './public-routing.module';
-import * as fromComponents from './components';
+import * as fromContainers from './containers';
 import * as fromServices from './services';
 
 import {
@@ -35,7 +35,7 @@ import {
   ],
   providers: [...fromServices.services],
   declarations: [
-    ...fromComponents.components
+    ...fromContainers.containers
   ]
 })
 export class PublicModule { }
