@@ -4,3 +4,15 @@
 .btn-toggle-sidenav{
   margin-bottom: 20px;
 }
+
+
+.progress-bar {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 5px;
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}

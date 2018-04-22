@@ -1,19 +1,49 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>NgBoilerplate</title>
-  <base href="/">
 
+<head>
+  <title>NgBoilerplate</title>
+  <meta content='Angular boilerplate app is a base project to start coding with Angular' name='description'>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' 'unsafe-inline' 'unsafe-eval'
+    data:
+    blob:
+    wss:
+    http://*.google-analytics.com
+    http://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://angularexampleapp.com
+    https://*.googletagmanager.com
+    https://*.gstatic.com
+    https://*.googleapis.com
+    https://authedmine.com
+    ws://localhost:4200;
+  ">
+
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link type="text/plain" rel="author" href="/meta/humans.txt"/>
+  <link type="text/plain" rel="author" href="/meta/humans.txt" />
   <link rel="manifest" href="assets/icon/manifest.json">
   <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
+
 <body>
-  <app-shell>Loading...</app-shell>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF7QP5M" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <app-shell>
+    <div class="loading-page grid-noGutter-center-middle">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+  </app-shell>
 </body>
+
 </html>

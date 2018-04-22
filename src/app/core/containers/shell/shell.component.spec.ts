@@ -10,7 +10,7 @@ describe('ShellComponent', () => {
   let fixture: ComponentFixture<ShellComponent>;
   let injector: TestBed;
 
-  let layout = injector.get(new ShellComponent(null));
+  let layout = injector.get(new ShellComponent(null, null));
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

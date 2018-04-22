@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { SharedModule } from '../shared';
 
@@ -11,6 +11,8 @@ import { PublicRoutingModule } from './public-routing.module';
 
 import * as fromContainers from './containers';
 import * as fromServices from './services';
+
+import * as core from '../core';
 
 @NgModule({
   imports: [
@@ -22,7 +24,17 @@ import * as fromServices from './services';
     SharedModule,
     PublicStoreModule,
   ],
-  providers: [...fromServices.services],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: core.ProgressInterceptor,
+      multi: true,
+      deps: [
+        core.ProgressBarService
+      ]
+    },
+    ...fromServices.services
+  ],
   declarations: [
     ...fromContainers.containers
   ]

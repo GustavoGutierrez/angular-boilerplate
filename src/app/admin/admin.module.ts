@@ -27,6 +27,8 @@ import { SharedModule } from "../shared";
 import { PublicStoreModule } from "../public/store";
 import * as fromPublicServices from "../public/services";
 
+import * as core from '../core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -46,6 +48,14 @@ import * as fromPublicServices from "../public/services";
       provide: HTTP_INTERCEPTORS,
       useClass: fromInterceptors.TimingInterceptor,
       multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: core.ProgressInterceptor,
+      multi: true,
+      deps: [
+        core.ProgressBarService
+      ]
     },
     ...fromServices.services,
     ...fromGuards.guards,

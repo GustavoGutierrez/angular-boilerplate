@@ -26,6 +26,7 @@
 // No deberíamos encontrar selectores con una especificidad inferior a una clase en esta capa.
   @import "components/buttons";
   @import "components/validators";
+  @import "components/spinkit";
 
 // TRUMPS
 // Esta capa supera a todas las demás capas y tiene el poder de anular cualquier cosa que haya pasado antes.
