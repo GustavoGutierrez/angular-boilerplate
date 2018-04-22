@@ -1,2 +1,2 @@
-export * from './components/layout/layout.component';
+export * from './containers/shell/shell.component';
 export * from './core.module';

@@ -1,10 +1,10 @@
-import { LayoutComponent }  from './layout/layout.component';
+import { ShellComponent }  from './shell/shell.component';
 import { PageNotFoundComponent }  from './page-not-found/page-not-found.component';
 
-export const components:any[] = [
-  LayoutComponent,
+export const containers:any[] = [
+  ShellComponent,
   PageNotFoundComponent
 ];
 
-export * from './layout/layout.component';
+export * from './shell/shell.component';
 export * from './page-not-found/page-not-found.component';

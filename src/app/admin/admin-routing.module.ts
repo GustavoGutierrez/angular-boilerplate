@@ -3,20 +3,27 @@ import { NgModule } from "@angular/core";
 
 // Containers
 import * as fromContainers from "./containers";
+import * as fromGuards from "./guards";
 
-const ROUTES: Routes = [
+const ADMIN_ROUTES: Routes = [
   {
-    path: "",
+    path: '',
     component: fromContainers.LayoutComponent,
     children: [
       {
-        path: "",
+        path: '',
         pathMatch: 'full',
+        canActivate:[
+          fromGuards.AdminGuard
+        ],
         component: fromContainers.DashboardComponent
       },
 
       {
-        path: "tasking",
+        path: 'tasking',
+        canActivate:[
+          fromGuards.AdminGuard
+        ],
         component: fromContainers.TaskComponent
       }
     ]
@@ -24,7 +31,7 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(ROUTES)],
+  imports: [RouterModule.forChild(ADMIN_ROUTES)],
   exports: [RouterModule],
   declarations: []
 })

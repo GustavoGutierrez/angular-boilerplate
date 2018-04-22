@@ -23,6 +23,7 @@ import { AdminStoreModule } from "./store";
 
 // services
 import * as fromServices from "./services";
+import * as fromGuards from "./guards";
 
 // components
 import * as fromComponents from "./components";
@@ -69,6 +70,7 @@ import * as fromPublicServices from "../public/services";
       multi: true
     },
     ...fromServices.services,
+    ...fromGuards.guards,
     ...fromPublicServices.services
   ],
   declarations: [

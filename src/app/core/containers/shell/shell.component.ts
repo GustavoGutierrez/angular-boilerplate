@@ -3,11 +3,11 @@ import { Router, UrlTree } from '@angular/router';
 
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  selector: 'app-shell',
+  templateUrl: './shell.component.html',
+  styleUrls: ['./shell.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class ShellComponent implements OnInit {
 
   constructor(private router: Router) { }
 

@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard } from './guard/auth.guard';
-import * as fromComponents from './components';
+import * as fromContainers from './containers';
 
 const routes: Routes = [
   {
@@ -18,21 +17,17 @@ const routes: Routes = [
 
   {
     path: 'admin',
-    canActivate: [AuthGuard],
     loadChildren: 'app/admin/admin.module#AdminModule'
   },
 
   {
     path: '**',
-    component: fromComponents.PageNotFoundComponent
+    component: fromContainers.PageNotFoundComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [
-    AuthGuard
-  ]
+  exports: [RouterModule]
 })
 export class CoreRoutingModule { }
