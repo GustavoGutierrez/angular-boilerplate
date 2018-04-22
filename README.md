@@ -28,8 +28,11 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
     ├── app
     │   ├── admin
     │   │   ├── components
+    │   │   │   └── navbar
+    │   │   ├── containers
     │   │   │   ├── dashboard
-    │   │   │   └── todo
+    │   │   │   ├── layout
+    │   │   │   └── task
     │   │   ├── guards
     │   │   ├── interceptors
     │   │   ├── models
@@ -40,22 +43,27 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
     │   │       ├── reducers
     │   │       └── selectors
     │   ├── core
-    │   │   ├── components
-    │   │   │   ├── layout
-    │   │   │   ├── navbar
-    │   │   │   └── page-not-found
-    │   │   ├── guard
+    │   │   ├── containers
+    │   │   │   ├── page-not-found
+    │   │   │   └── shell
     │   │   ├── services
     │   │   ├── store
     │   │   │   ├── actions
     │   │   │   ├── effects
-    │   │   │   └── reducers
+    │   │   │   ├── reducers
+    │   │   │   └── selectors
     │   │   └── utils
     │   ├── public
-    │   │   ├── components
+    │   │   ├── containers
+    │   │   │   ├── layout
     │   │   │   └── login
     │   │   ├── models
-    │   │   └── services
+    │   │   ├── services
+    │   │   └── store
+    │   │       ├── actions
+    │   │       ├── effects
+    │   │       ├── reducers
+    │   │       └── selectors
     │   └── shared
     │       ├── components
     │       │   └── show-errors
@@ -67,10 +75,9 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
     │   ├── icon
     │   └── images
     │       └── example
-    ├── docs
     ├── environments
     ├── meta
-    └── scss <- Metodología ITCSS
+    └── scss
         ├── components
         ├── elements
         ├── generic
