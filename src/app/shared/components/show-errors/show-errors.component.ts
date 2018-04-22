@@ -6,7 +6,7 @@ import { AbstractControlDirective, AbstractControl } from "@angular/forms";
   selector: "show-errors",
   template: `
    <div *ngIf="shouldShowErrors()" class="validation-errors">
-     <mat-hint class="error-msg">{{getError()}}</mat-hint>
+     <mat-error class="error-msg">{{getError()}}</mat-error>
    </div>
  `
 })
@@ -45,8 +45,6 @@ export class ShowErrorsComponent {
   }
 
   getError(): string {
-    //console.log("show",this.control.errors);
-
     var errors = Object.keys(this.control.errors)
     .map(field =>
       this.getMessage(field, this.control.errors[field], this.control)

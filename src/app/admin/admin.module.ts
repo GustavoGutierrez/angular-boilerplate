@@ -2,18 +2,6 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatCardModule,
-  MatInputModule,
-  MatCheckboxModule,
-  MatSelectModule,
-  MatToolbarModule,
-  MatMenuModule,
-  MatSidenavModule
-} from "@angular/material";
 
 // Routing by admin
 import { AdminRoutingModule } from "./admin-routing.module";
@@ -38,6 +26,7 @@ import * as fromInterceptors from "./interceptors";
 import { SharedModule } from "../shared";
 import { PublicStoreModule } from "../public/store";
 import * as fromPublicServices from "../public/services";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -46,17 +35,6 @@ import * as fromPublicServices from "../public/services";
     AdminStoreModule,
     PublicStoreModule,
     SharedModule,
-
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatCardModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatSelectModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatSidenavModule
   ],
   providers: [
     {
@@ -76,7 +54,6 @@ import * as fromPublicServices from "../public/services";
   declarations: [
     ...fromContainers.containers,
     ...fromComponents.components
-  ],
-  exports: []
+  ]
 })
 export class AdminModule {}
