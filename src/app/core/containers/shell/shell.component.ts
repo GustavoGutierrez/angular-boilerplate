@@ -14,7 +14,6 @@ export class ShellComponent implements OnInit {
     private progressBarService: ProgressBarService
   ) {
     this.progressBarService.updateProgressBar$.subscribe((mode: string) => {
-      console.log('mode', mode)
       this.progressBarMode = mode;
     });
   }

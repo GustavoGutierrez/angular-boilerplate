@@ -1,7 +1,7 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HttpSentEvent, HttpHeaderResponse, HttpProgressEvent, HttpUserEvent} from '@angular/common/http';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HttpSentEvent, HttpHeaderResponse, HttpProgressEvent, HttpUserEvent, HttpErrorResponse} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {ProgressBarService} from '../services/progress-bar.service';
-
+import 'rxjs/add/operator/do';
 export class ProgressInterceptor implements HttpInterceptor {
   constructor(private progressBarService: ProgressBarService) {}
 
@@ -10,13 +10,16 @@ export class ProgressInterceptor implements HttpInterceptor {
   HttpProgressEvent |
   HttpResponse<any> |
   HttpUserEvent<any>> {
-    console.log('Interceptor');
     this.progressBarService.increase();
     return next
       .handle(req)
       .do(event => {
         if (event instanceof HttpResponse) {
          this.progressBarService.decrease();
+        }
+      }, (err: any) => {
+        if (err instanceof HttpErrorResponse) {
+          this.progressBarService.decrease();
         }
       });
   }
