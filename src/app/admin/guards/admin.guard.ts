@@ -5,9 +5,9 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from '@angular/router';
-import * as fromPublicStore from '@public/store';
-import * as fromPublicActions from '@public/store/actions';
-import * as fromPublicSelectors from '@public/store/selectors';
+import * as fromStore from '@core/store';
+import * as fromActions from '@core/store/actions';
+import * as fromSelectors from '@core/store/selectors';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
@@ -18,9 +18,9 @@ export class AdminGuard implements CanActivate {
 
   constructor(
     private router: Router,
-    private publicStore: Store<fromPublicStore.PublicState>
+    private store: Store<fromStore.State>
   ) {
-    this.token$ = publicStore.select(fromPublicSelectors.getTokenState);
+    this.token$ = store.select(fromSelectors.getTokenState);
     this.token$.subscribe(token => {
       this.token = token;
     });
@@ -30,8 +30,10 @@ export class AdminGuard implements CanActivate {
     if (this.token) {
       return true;
     } else if (!this.token) {
-      // TODO: user action store fron redirect to login
-      this.router.navigate(['/'], { queryParams: { returnUrl: state.url } });
+      this.store.dispatch(new fromActions.Go({
+        path: ['/'],
+        query: { queryParams: { returnUrl: state.url } }
+      }));
     }
     return false;
   }

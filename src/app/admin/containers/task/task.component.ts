@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import * as R from 'ramda';
 
 import { Task } from '@admin/models/task.model';
-import * as tasking from '@admin/store/actions';
-import * as fromStore from '@admin/store';
+import * as fromActions from '@core/store/actions';
+import * as fromStore from '@core/store';
 
 @Component({
   selector: 'app-task',
@@ -22,7 +22,7 @@ export class TaskComponent implements OnInit {
   public todosInCompleteds: number;
   private hasComplete: any = R.has('isCompleted');
 
-  constructor(private store: Store<fromStore.AdminState>) {
+  constructor(private store: Store<fromStore.State>) {
     this.todos$ = store.select(fromStore.geTaskingState);
     this.lastUpdate$ = store.select(fromStore.getLastUpdateState);
   }
@@ -46,16 +46,16 @@ export class TaskComponent implements OnInit {
     if (!input.value) {
       return;
     }
-    this.store.dispatch(new tasking.AddTodo(input.value));
+    this.store.dispatch(new fromActions.AddTodo(input.value));
     input.value = '';
   }
 
   toggleTodo(todo: Task) {
-   this.store.dispatch(new tasking.ToggleTodo(todo.id));
+   this.store.dispatch(new fromActions.ToggleTodo(todo.id));
   }
 
   removeTodo(todo: Task) {
-    this.store.dispatch(new tasking.RemoveTodo(todo.id));
+    this.store.dispatch(new fromActions.RemoveTodo(todo.id));
   }
 
   onEnter(input: HTMLInputElement) {

@@ -4,10 +4,9 @@ import { Location } from '@angular/common';
 import { Effect, Actions } from '@ngrx/effects';
 import { of } from 'rxjs/observable/of';
 import { tap, map, switchMap, catchError } from 'rxjs/operators';
-import { LoginService } from '../../services/login.service';
-import * as actions from '../actions';
-import { LoginForm } from '../../models/login-form.model';
-import { Auth } from '../../models/auth.model';
+import { LoginService } from '@core/services';
+import * as fromActions from '../actions';
+import { LoginForm, Auth } from '@public/models';
 
 @Injectable()
 export class LoginEffects {
@@ -19,21 +18,21 @@ export class LoginEffects {
   ) { }
 
   @Effect()
-  loginSingin$ = this.actions$.ofType(actions.LOGIN_SIGNIN).pipe(
-    map((action: actions.Signin) => action.payload),
+  loginSingin$ = this.actions$.ofType(fromActions.LOGIN_SIGNIN).pipe(
+    map((action: fromActions.Signin) => action.payload),
     switchMap((login: LoginForm) => {
       const { password, email } = login;
       return this.loginService
         .signin(email, password)
         .pipe(
-          map((auth: Auth) => new actions.SigninSuccess(auth)),
-          catchError(error => of(new actions.SigninError(error)))
+          map((auth: Auth) => new fromActions.SigninSuccess(auth)),
+          catchError(error => of(new fromActions.SigninError(error)))
         );
     })
   );
 
   @Effect({ dispatch: false })
-  loginSinginSuccess$ = this.actions$.ofType(actions.LOGIN_SIGNIN_SUCCESS).pipe(tap(() => {
+  loginSinginSuccess$ = this.actions$.ofType(fromActions.LOGIN_SIGNIN_SUCCESS).pipe(tap(() => {
     return this.router.navigate(['admin']);
   }));
 }

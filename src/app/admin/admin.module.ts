@@ -6,9 +6,6 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
 // Routing by admin
 import { AdminRoutingModule } from "./admin-routing.module";
 
-// Store by admin
-import { AdminStoreModule } from "./store";
-
 // services
 import * as fromServices from "./services";
 import * as fromGuards from "./guards";
@@ -24,8 +21,9 @@ import * as fromInterceptors from "./interceptors";
 
 // Shared resoruces
 import { SharedModule } from "@shared/index";
-import { PublicStoreModule } from "@public/store";
-import * as fromPublicServices from "@public/services";
+
+// Store Apllication
+import { CoreStoreModule } from "@core/store";
 
 import * as core from '@core/index';
 
@@ -34,8 +32,7 @@ import * as core from '@core/index';
     CommonModule,
     ReactiveFormsModule,
     AdminRoutingModule,
-    AdminStoreModule,
-    PublicStoreModule,
+    CoreStoreModule,
     SharedModule,
   ],
   providers: [
@@ -58,8 +55,7 @@ import * as core from '@core/index';
       ]
     },
     ...fromServices.services,
-    ...fromGuards.guards,
-    ...fromPublicServices.services
+    ...fromGuards.guards
   ],
   declarations: [
     ...fromContainers.containers,

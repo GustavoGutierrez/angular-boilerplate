@@ -19,13 +19,15 @@ import "./common/fontawesome";
     RouterModule,
     SharedModule,
     CoreRoutingModule,
-    CoreStoreModule,
+    CoreStoreModule
   ],
   providers: [
     ...fromServices.services
   ],
   declarations: [...fromContainers.containers],
-  exports: [...fromContainers.containers]
+  exports: [
+    ...fromContainers.containers
+  ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

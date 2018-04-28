@@ -1,42 +1,38 @@
-import {
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  Params,
-} from '@angular/router';
-import { createFeatureSelector, ActionReducerMap } from '@ngrx/store';
-
+import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import * as fromRouter from '@ngrx/router-store';
 
-export interface RouterStateUrl {
-  url: string;
-  queryParams: Params;
-  params: Params;
+import * as fromRouterReducers from './router.reducer';
+import * as fromLoginReducers from './login.reducer';
+import * as fromTaskingReducers from './tasking.reducer';
+
+export * from './router.reducer';
+
+// Global Sate Application - <all reduces>
+export interface State {
+  login: fromLoginReducers.LoginState;
+  routerReducer: fromRouter.RouterReducerState<fromRouterReducers.RouterStateUrl>;
+  tasking: fromTaskingReducers.TaskingState;
 }
 
-export interface State {
-  routerReducer: fromRouter.RouterReducerState<RouterStateUrl>;
-}
+export const CORE_INITIAL_STATE: State = {
+  login: fromLoginReducers.LOGIN_INITIAL_STATE,
+  routerReducer: null,
+  tasking: fromTaskingReducers.TASKING_INITIAL_STATE
+};
+
 
 export const reducers: ActionReducerMap<State> = {
   routerReducer: fromRouter.routerReducer,
+  login: fromLoginReducers.loginReducer,
+  tasking: fromTaskingReducers.taskingReducer
 };
 
+// Feature by core module
+
 export const getRouterState = createFeatureSelector<
-  fromRouter.RouterReducerState<RouterStateUrl>
+  fromRouter.RouterReducerState<fromRouterReducers.RouterStateUrl>
 >('routerReducer');
 
-export class CustomSerializer
-  implements fromRouter.RouterStateSerializer<RouterStateUrl> {
-  serialize(routerState: RouterStateSnapshot): RouterStateUrl {
-    const { url } = routerState;
-    const { queryParams } = routerState.root;
-
-    let state: ActivatedRouteSnapshot = routerState.root;
-    while (state.firstChild) {
-      state = state.firstChild;
-    }
-    const { params } = state;
-
-    return { url, queryParams, params };
-  }
-}
+export const getCoreState = createFeatureSelector<State>(
+  'core'
+);

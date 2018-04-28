@@ -15,9 +15,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 
-import * as publicActions from '@public/store/actions';
-import * as fromPublicStore from '@public/store';
-import * as fromSelectors from '@public/store/selectors';
+import * as fromActions from '@core/store/actions';
+import * as fromStore from '@core/store';
+import * as fromSelectors from '@core/store/selectors';
 import * as R from 'ramda';
 /**
  * Servicio interceptor de peticiones http, este servicio intercepta todas las peticiones realizadas
@@ -30,9 +30,9 @@ export class TokenInterceptor implements HttpInterceptor {
   private authorization: string = '';
 
   constructor(
-    private storePublic: Store<fromPublicStore.PublicState>,
+    private store: Store<fromStore.State>,
   ) {
-    this.token$ = storePublic.select(fromSelectors.getTokenState);
+    this.token$ = store.select(fromSelectors.getTokenState);
     this.token$.subscribe(token => {
       this.authorization = token;
     });
@@ -64,7 +64,9 @@ export class TokenInterceptor implements HttpInterceptor {
     }, (err: any) => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401 || err.status === 403) {
-         window.location.href = location.protocol + '//' + location.host;
+         this.store.dispatch(new fromActions.Go({
+          path: ['/']
+        }));
         }
       }
     });

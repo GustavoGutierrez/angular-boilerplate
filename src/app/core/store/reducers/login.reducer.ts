@@ -1,7 +1,7 @@
 import { Action, createFeatureSelector } from '@ngrx/store';
 import { tassign } from 'tassign';
 import * as actions from '../actions';
-import { Auth, LoginForm } from '../../models';
+import { Auth, LoginForm } from '@public/models';
 import { HttpErrorResponse } from '@angular/common/http';
 
 export interface LoginState {

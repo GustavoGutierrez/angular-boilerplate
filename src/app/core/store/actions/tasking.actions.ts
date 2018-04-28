@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Task } from '../../models/task.model';
+import { Task } from '@admin/models';
 
 // add todo
 export const ADD_TODO = '[Tasking] Add Todo';

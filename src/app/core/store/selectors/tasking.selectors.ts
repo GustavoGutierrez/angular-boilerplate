@@ -3,11 +3,11 @@ import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/s
 
 // selectors
 export const geTaskingState = createSelector(
-  fromFeature.getAdminState,
-  (state: fromFeature.AdminState) => state.tasking.todos
+  fromFeature.getCoreState,
+  (state: fromFeature.State) => state.tasking.todos
 );
 
 export const getLastUpdateState = createSelector(
-  fromFeature.getAdminState,
-  (state: fromFeature.AdminState) => state.tasking.lastUpdate
+  fromFeature.getCoreState,
+  (state: fromFeature.State) => state.tasking.lastUpdate
 );

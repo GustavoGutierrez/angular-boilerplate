@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import * as loginActions from '../../store/actions/login.action';
-import * as fromStore from '../../store';
+import * as fromActions from '@core/store/actions';
+import * as fromStore from '@core/store';
 import { Store } from '@ngrx/store';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -20,14 +20,14 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private store: Store<fromStore.PublicState>,
+    private store: Store<fromStore.State>,
     private fb: FormBuilder
   ) {
     this.error$ = store.select(fromStore.getLoginErrorState);
   }
 
   ngOnInit() {
-    this.store.dispatch(new loginActions.SigninError(null));
+    this.store.dispatch(new fromActions.SigninError(null));
 
     this.loginForm = this.fb.group({
       password: ['', [Validators.minLength(3), Validators.required]],
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       dirty: boolean;
     }) {
     if (dirty && valid) {
-      this.store.dispatch(new loginActions.Signin(value));
+      this.store.dispatch(new fromActions.Signin(value));
     }
   }
 

@@ -5,7 +5,7 @@ import { EffectsModule } from "@ngrx/effects";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { storeLogger } from "ngrx-store-logger";
 import { localStorageSync } from "ngrx-store-localstorage";
-import { environment } from "environments/environment";
+import { environment } from "@environments/environment";
 import { keys } from "ramda";
 
 import { effects } from "./effects";
@@ -20,7 +20,7 @@ export function localStorageSyncReducer(
   reducer: ActionReducer<State>
 ): ActionReducer<State> {
   return localStorageSync({
-    keys: keys(reducers).concat(["public", "admin"]),
+    keys: ["core"],
     rehydrate: true,
     storage: sessionStorage
   })(reducer);
@@ -39,8 +39,13 @@ export const STORE_DEV_TOOLS: any[] | ModuleWithProviders = environment.producti
 
 @NgModule({
   imports: [
-    StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot(effects),
+    StoreModule.forRoot({}, { metaReducers }),
+    EffectsModule.forRoot([]),
+
+
+    StoreModule.forFeature('core', reducers),
+    EffectsModule.forFeature(effects),
+
     StoreRouterConnectingModule,
     STORE_DEV_TOOLS
   ],

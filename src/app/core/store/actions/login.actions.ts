@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { LoginForm, Auth } from '../../models';
+import { LoginForm, Auth } from '@public/models';
 
 export const LOGIN_SIGNIN = '[Login] signin';
 export const LOGIN_SIGNIN_ERROR = '[Login] signin error';

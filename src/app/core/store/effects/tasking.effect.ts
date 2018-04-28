@@ -5,8 +5,8 @@ import { map, switchMap, catchError } from 'rxjs/operators';
 
 import * as TaskingActions from '../actions/tasking.actions';
 import { Observable } from 'rxjs/Observable';
-import { Task } from '../../models/task.model';
-import { TodoService } from '../../services';
+import { Task } from '@admin/models/task.model';
+import { TodoService } from '@admin/services';
 
 @Injectable()
 export class TaskingEffects {
