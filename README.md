@@ -12,6 +12,7 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 - Lazy loading modules
 - Responsive layout con con Gridlex
 - Angular Pipes
+- Store Single Directory (@core/store)
 - Uso e implementación de @ngrx/effects
 - Uso de selectors y features
 - Pruebas unitarias con Jasmine y Karma incluyendo covertura de código.
@@ -36,48 +37,40 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
     │   │   ├── guards
     │   │   ├── interceptors
     │   │   ├── models
-    │   │   ├── services
-    │   │   └── store
-    │   │       ├── actions
-    │   │       ├── effects
-    │   │       ├── reducers
-    │   │       └── selectors
+    │   │   └── services
     │   ├── core
+    │   │   ├── common
     │   │   ├── containers
     │   │   │   ├── page-not-found
     │   │   │   └── shell
+    │   │   ├── interceptors
     │   │   ├── services
-    │   │   ├── store
-    │   │   │   ├── actions
-    │   │   │   ├── effects
-    │   │   │   ├── reducers
-    │   │   │   └── selectors
-    │   │   └── utils
-    │   ├── public
-    │   │   ├── containers
-    │   │   │   ├── layout
-    │   │   │   └── login
-    │   │   ├── models
-    │   │   ├── services
-    │   │   └── store
+    │   │   └── store ⇐ Store Single Directorya
     │   │       ├── actions
     │   │       ├── effects
     │   │       ├── reducers
     │   │       └── selectors
+    │   ├── public
+    │   │   ├── components
+    │   │   ├── containers
+    │   │   │   ├── layout
+    │   │   │   └── login
+    │   │   └── models
     │   └── shared
     │       ├── components
-    │       │   └── show-errors
     │       ├── directives
+    │       ├── modules
+    │       │   └── material
     │       ├── pipes
+    │       ├── utils
     │       └── validators
     ├── assets
     │   ├── fonts
     │   ├── icon
     │   └── images
-    │       └── example
     ├── environments
     ├── meta
-    └── scss
+    └── scss ⇐ ITCSS
         ├── components
         ├── elements
         ├── generic
