@@ -45,7 +45,7 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
     │   │   │   └── shell
     │   │   ├── interceptors
     │   │   ├── services
-    │   │   └── store ⇐ Store Single Directorya
+    │   │   └── store ⇐ Store Single Directory
     │   │       ├── actions
     │   │       ├── effects
     │   │       ├── reducers
