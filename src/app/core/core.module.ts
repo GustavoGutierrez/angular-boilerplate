@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 
-import { SharedModule } from "../shared/shared.module";
+import { SharedModule } from "@shared/shared.module";
 import { CoreRoutingModule } from "./core-routing.module";
 import { CoreStoreModule } from "./store";
 import * as fromContainers from "./containers";

@@ -23,11 +23,11 @@ import * as fromContainers from "./containers";
 import * as fromInterceptors from "./interceptors";
 
 // Shared resoruces
-import { SharedModule } from "../shared";
-import { PublicStoreModule } from "../public/store";
-import * as fromPublicServices from "../public/services";
+import { SharedModule } from "@shared/index";
+import { PublicStoreModule } from "@public/store";
+import * as fromPublicServices from "@public/services";
 
-import * as core from '../core';
+import * as core from '@core/index';
 
 @NgModule({
   imports: [

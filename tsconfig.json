@@ -16,6 +16,13 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@core/*":["app/core/*"],
+      "@admin/*":["app/admin/*"],
+      "@public/*":["app/public/*"],
+      "@shared/*":["app/shared/*"],
+      "@environments/*":["environments/*"],
+    }
   }
 }

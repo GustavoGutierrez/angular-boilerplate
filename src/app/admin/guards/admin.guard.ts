@@ -5,9 +5,9 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from '@angular/router';
-import * as fromPublicStore from '../../public/store';
-import * as fromPublicActions from '../../public/store/actions';
-import * as fromPublicSelectors from '../../public/store/selectors';
+import * as fromPublicStore from '@public/store';
+import * as fromPublicActions from '@public/store/actions';
+import * as fromPublicSelectors from '@public/store/selectors';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 

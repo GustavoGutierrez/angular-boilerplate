@@ -15,9 +15,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 
-import * as publicActions from '../../public/store/actions';
-import * as fromPublicStore from '../../public/store';
-import * as fromSelectors from '../../public/store/selectors';
+import * as publicActions from '@public/store/actions';
+import * as fromPublicStore from '@public/store';
+import * as fromSelectors from '@public/store/selectors';
 import * as R from 'ramda';
 /**
  * Servicio interceptor de peticiones http, este servicio intercepta todas las peticiones realizadas

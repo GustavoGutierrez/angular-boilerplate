@@ -3,9 +3,9 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as R from 'ramda';
 
-import { Task } from '../../models/task.model';
-import * as tasking from '../../store/actions';
-import * as fromStore from '../../store';
+import { Task } from '@admin/models/task.model';
+import * as tasking from '@admin/store/actions';
+import * as fromStore from '@admin/store';
 
 @Component({
   selector: 'app-task',

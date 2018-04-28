@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, UrlTree } from "@angular/router";
-import { ProgressBarService } from "../../services";
+import { ProgressBarService } from "@core/services";
 
 @Component({
   selector: "app-shell",

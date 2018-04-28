@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { SharedModule } from '../shared';
+import { SharedModule } from '@shared/index';
 
 import { PublicStoreModule } from './store';
 import { PublicRoutingModule } from './public-routing.module';
@@ -12,7 +12,7 @@ import { PublicRoutingModule } from './public-routing.module';
 import * as fromContainers from './containers';
 import * as fromServices from './services';
 
-import * as core from '../core';
+import * as core from '@core/index';
 
 @NgModule({
   imports: [
