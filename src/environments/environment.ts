@@ -6,8 +6,8 @@
 export const environment = {
   production: false,
 
-  API_URL: '',
+  API_URL: 'https://firestore.googleapis.com/v1beta1/projects/angular-boilerplate-d7191/databases/(default)/documents/',
 
-  API_LOGIN: '',
+  API_LOGIN: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDDwa4lm8sjf7wjgcKcI6pqGHrth6zcIbY',
 
 };
