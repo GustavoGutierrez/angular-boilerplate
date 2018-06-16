@@ -1,6 +1,6 @@
 # ANGULAR BOILERPLATE
 
-Proyecto base para iniciar cualquier proyecto con Angular 5.2.9 usando ngrx/store para manejar el estado y flujo de los datos de la aplicación manteniendo un estándar en la organización del código e implementa las mejores prácticas actuales de Javascript haciendo uso de immutables, programación funcional. Con el uso de librerías como: [Ramda](http://ramdajs.com), [Immutable](https://facebook.github.io/immutable-js/), [Tassign](https://www.npmjs.com/package/tassign), etc.
+Proyecto base para iniciar cualquier proyecto con Angular 6.0.5 usando ngrx/store para manejar el estado y flujo de los datos de la aplicación manteniendo un estándar en la organización del código e implementa las mejores prácticas actuales de Javascript haciendo uso de immutables, programación funcional. Con el uso de librerías como: [Ramda](http://ramdajs.com), [Immutable](https://facebook.github.io/immutable-js/), [Tassign](https://www.npmjs.com/package/tassign), etc.
 
 Este proyecto ofrece una estructura base organizada e intuitiva para el inicio de cualquier proyecto SPA complejo. proponiendo el uso de la immutabilidad con la programación funcional para hacer a nuestros proyectos fácilmente escalables y predecible tanto en Javascript como en CSS; En css se implementa una arquitectura escalable y mantenible con el uso de de ITCSS [http://itcss.io](http://itcss.io/).
 
@@ -18,7 +18,7 @@ Este proyecto ofrece una estructura base organizada e intuitiva para el inicio d
 - Pruebas unitarias con Jasmine y Karma incluyendo covertura de código.
 - Pruebas de covertura con Istanbul y Karma
 - End-to-end de codigo Angular usando Protractor.
-- Soporte de Angular 5.2.9 y control de cambios usando package.json y cualquier nueva caracteristica de versiones de Angular.
+- Soporte de Angular 6.0.5 y control de cambios usando package.json y cualquier nueva caracteristica de versiones de Angular.
 
 ## Estructura de Aplicación
 
